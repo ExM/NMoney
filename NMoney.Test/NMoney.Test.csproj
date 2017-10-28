@@ -38,7 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="CurrencyTest.cs" />
+    <Compile Include="CurrencySetTests.cs" />
+    <Compile Include="Iso4217CurrenciesTest.cs" />
     <Compile Include="ZeroTest.cs" />
     <Compile Include="MoneyTest.cs" />
   </ItemGroup>

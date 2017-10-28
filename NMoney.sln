@@ -11,17 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{83F5FE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{6C48742A-D944-4BF1-A4FB-6BBF1ECB7E58}"
 	ProjectSection(SolutionItems) = preProject
-		doc\list_one.xml = doc\list_one.xml
-		doc\references.txt = doc\references.txt
-		doc\unicodeSymbols.csv = doc\unicodeSymbols.csv
+		doc\Finance-Currency-icon.png = doc\Finance-Currency-icon.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMoney", "NMoney\NMoney.csproj", "{FE869DA2-B1B0-4E31-B418-7334832A59F6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "T4Templates", "T4Templates", "{A70734D1-3732-498C-B19F-2F71641DD849}"
-	ProjectSection(SolutionItems) = preProject
-		T4Templates\Iso4217table.ttinclude = T4Templates\Iso4217table.ttinclude
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMoney.Test", "NMoney.Test\NMoney.Test.csproj", "{A8EEFA5D-A3B0-4E35-B5FE-3D40227BD679}"
 EndProject

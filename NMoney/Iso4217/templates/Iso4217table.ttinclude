@@ -9,6 +9,35 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#+
 
+	public class NameOverride
+	{
+		private Dictionary<string, string> _map;
+
+		public static NameOverride Load(string csvFile)
+		{
+			var result = new NameOverride();
+
+			result._map = new Dictionary<string, string>();
+
+			foreach(string line in File.ReadAllLines(csvFile).Skip(1))
+			{
+				string[] cells = line.Split(';');
+				result._map.Add(cells[0], cells[1]);
+			}
+
+			return result;
+		}
+
+		public string Get(string code)
+		{
+			string result;
+			if(_map.TryGetValue(code, out result))
+				return result;
+
+			return null;
+		}
+	}
+
 	public class CurrencySymbols
 	{
 		private Dictionary<string, string> _map;
@@ -22,18 +51,7 @@
 			foreach(string line in File.ReadAllLines(csvFile).Skip(1))
 			{
 				string[] cells = line.Split(';');
-				string code = cells[0];
-				string symbol = "";
-				foreach(string ch in cells[1].Split(','))
-				{
-					if(ch.Length == 2)
-						symbol += ((char)Convert.ToInt32(ch, 16)).ToString();
-					else if(ch.Length == 3)
-						symbol += "\\u0" + ch;
-					else
-						symbol += "\\u" + ch;
-				}
-				result._map.Add(code, symbol);
+				result._map.Add(cells[0], cells[1]);
 			}
 
 			return result;
