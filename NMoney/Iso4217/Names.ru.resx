@@ -378,12 +378,6 @@
   <data name="LSL" xml:space="preserve">
     <value>Лоти</value>
   </data>
-  <data name="LTL" xml:space="preserve">
-    <value>Литовский лит</value>
-  </data>
-  <data name="LVL" xml:space="preserve">
-    <value>Латвийский лат</value>
-  </data>
   <data name="LYD" xml:space="preserve">
     <value>Ливийский динар</value>
   </data>
@@ -407,9 +401,6 @@
   </data>
   <data name="MOP" xml:space="preserve">
     <value>Патака</value>
-  </data>
-  <data name="MRO" xml:space="preserve">
-    <value>Угия</value>
   </data>
   <data name="MUR" xml:space="preserve">
     <value>Маврикийская рупия</value>
@@ -522,9 +513,6 @@
   <data name="SSP" xml:space="preserve">
     <value>Южносуданский фунт</value>
   </data>
-  <data name="STD" xml:space="preserve">
-    <value>Добра</value>
-  </data>
   <data name="SVC" xml:space="preserve">
     <value>Сальвадорский колон</value>
   </data>
@@ -621,9 +609,6 @@
   <data name="XDR" xml:space="preserve">
     <value>Специальные права заимствования</value>
   </data>
-  <data name="XFU" xml:space="preserve">
-    <value>Франк ЮИК</value>
-  </data>
   <data name="XOF" xml:space="preserve">
     <value>Франк КФА ВСЕАО</value>
   </data>
@@ -650,9 +635,6 @@
   </data>
   <data name="ZAR" xml:space="preserve">
     <value>Рэнд</value>
-  </data>
-  <data name="ZMK" xml:space="preserve">
-    <value>Замбийская квача</value>
   </data>
   <data name="ZMW" xml:space="preserve">
     <value>Замбийская квача</value>

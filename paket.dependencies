@@ -1,6 +1,6 @@
-version 5.114.4
+version 5.156.5
 
 framework: net45
 
 source https://www.nuget.org/api/v2/
-nuget NUnit 3.4.0
+nuget NUnit ~> 3.0

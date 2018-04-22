@@ -91,7 +91,6 @@
       <LastGenOutput>Names.resx</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Iso4217\doc\list_one.xml" />
     <None Include="Iso4217\doc\references.txt" />
