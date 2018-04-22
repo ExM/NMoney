@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace NMoney.Iso4217
 {
-	public class Currency: NMoney.Currency, IFormattable
+	public class Currency: NMoney.Currency
 	{
 		private static readonly ResourceManager _rMan = new ResourceManager("NMoney.Iso4217.Names", typeof(Currency).Assembly);
 

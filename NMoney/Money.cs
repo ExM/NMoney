@@ -10,12 +10,12 @@ namespace NMoney
 		/// <summary>
 		/// amount of money
 		/// </summary>
-		public decimal Amount { get; private set; }
+		public decimal Amount { get; }
 		
 		/// <summary>
 		/// currency
 		/// </summary>
-		public ICurrency Currency { get; private set; }
+		public ICurrency Currency { get; }
 		
 		/// <summary>
 		/// creates a amount of money in any currency
@@ -30,7 +30,7 @@ namespace NMoney
 			:this()
 		{
 			if (currency == null)
-				throw new ArgumentNullException("currency");
+				throw new ArgumentNullException(nameof(currency));
 			Amount = amount;
 			Currency = currency;
 		}
@@ -292,7 +292,7 @@ namespace NMoney
 			return new Money(lhs.Amount - rhs.Amount, lhs.Currency);
 		}
 
-		private bool noCurrency => object.Equals(Currency, null);
+		private bool noCurrency => Equals(Currency, null);
 
 		/// <summary>
 		/// Default value

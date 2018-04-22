@@ -13,7 +13,7 @@ namespace NMoney
 
 		public CurrencySet(IReadOnlyCollection<T> currencies)
 		{
-			if (object.ReferenceEquals(currencies, null))
+			if (ReferenceEquals(currencies, null))
 				throw new ArgumentNullException(nameof(currencies));
 			_currencies = currencies;
 			_codeMap = new Dictionary<string, T>(currencies.Count, StringComparer.OrdinalIgnoreCase);
