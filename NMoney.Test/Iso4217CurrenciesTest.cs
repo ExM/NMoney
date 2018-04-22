@@ -88,7 +88,7 @@ namespace NMoney
 			Assert.AreEqual(exp, _set.Parse(code).ToString());
 		}
 
-		[Test, TestCaseSource("fullLocalizationCases")]
+		[Test, TestCaseSource(nameof(fullLocalizationCases))]
 		public void CheckFullLocalization(string code, string culture)
 		{
 			var currency = _set.Parse(code);
