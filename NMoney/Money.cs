@@ -42,7 +42,7 @@ namespace NMoney
 		{
 			if (noCurrency)
 				return "0";
-			return string.Format ("{0:G} {1}", Amount, Currency.CharCode);
+			return $"{Amount:G} {Currency.CharCode}";
 		}
 		
 		/// <summary>

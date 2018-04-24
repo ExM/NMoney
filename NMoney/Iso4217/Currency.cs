@@ -11,7 +11,7 @@ namespace NMoney.Iso4217
 		private readonly int _numCode;
 		
 		internal Currency(string charCode, string sym, int num, decimal mu)
-			:base(charCode, sym, mu)
+			:base(charCode, mu, sym)
 		{
 			_numCode = num;
 		}

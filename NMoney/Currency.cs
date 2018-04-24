@@ -4,10 +4,13 @@ namespace NMoney
 {
 	public class Currency: ICurrency
 	{
-		public Currency(string charCode, string sym, decimal mu)
+		public Currency(string charCode, decimal mu, string sym = null)
 		{
+			if(charCode == null)
+				throw new ArgumentNullException(nameof(charCode));
+			
 			CharCode = charCode;
-			Symbol = sym;
+			Symbol = sym ?? "¤";
 			MinorUnit = mu;
 		}
 		

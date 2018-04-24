@@ -6,9 +6,9 @@ namespace NMoney
 	[TestFixture]
 	public class CurrencySetTests
 	{
-		private readonly Currency _xa = new Currency("XA", "a", 0.01m);
-		private readonly Currency _xb = new Currency("XB", "b", 0.01m);
-		private readonly Currency _xc = new Currency("XC", "c", 0.01m);
+		private readonly Currency _xa = new Currency("XA", 0.01m, "a");
+		private readonly Currency _xb = new Currency("XB", 0.01m, "b");
+		private readonly Currency _xc = new Currency("XC", 0.01m, "c");
 
 		[Test]
 		public void Create()
@@ -25,7 +25,7 @@ namespace NMoney
 		[Test]
 		public void DuplicateCodes()
 		{
-			var xc = new Currency("XB", "c", 0.01m);
+			var xc = new Currency("XB", 0.01m, "c");
 
 			Assert.Throws<ArgumentException>(() => new CurrencySet(new[] { _xa, _xb, xc }));
 		}
