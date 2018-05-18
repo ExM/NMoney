@@ -10,9 +10,12 @@ namespace NMoney.Iso4217
 	{
 		private static readonly Lazy<CurrencySet> _lazy = new Lazy<CurrencySet>(() => new CurrencySet(), true);
 
+		/// <summary>
+		/// This instance contains all currencies from ISO 4217 
+		/// </summary>
 		public static CurrencySet Instance => _lazy.Value;
 
-		private Dictionary<int, Iso4217.Currency> _numMap;
+		private readonly Dictionary<int, Iso4217.Currency> _numMap;
 
 		private CurrencySet() : base(GetAll())
 		{

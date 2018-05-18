@@ -11,6 +11,7 @@ namespace NMoney
 		private IReadOnlyCollection<T> _currencies;
 		private Dictionary<string, T> _codeMap;
 
+		/// <inheritdoc />
 		public CurrencySet(IReadOnlyCollection<T> currencies)
 		{
 			if (ReferenceEquals(currencies, null))
@@ -21,8 +22,10 @@ namespace NMoney
 				_codeMap.Add(c.CharCode, c);
 		}
 
+		/// <inheritdoc />
 		public IReadOnlyCollection<T> AllCurencies => _currencies;
 
+		/// <inheritdoc />
 		public T TryParse(string charCode)
 		{
 			T currency;

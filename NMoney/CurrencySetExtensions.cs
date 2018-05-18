@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace NMoney
 {
@@ -7,21 +8,28 @@ namespace NMoney
 	/// </summary>
 	public static class CurrencySetExtensions
 	{
+		/// <summary>
+		/// Currency set is contains specified currency
+		/// </summary>
 		public static bool Contain(this ICurrencySet currencySet, ICurrency currency)
 		{
 			var candidate = currencySet.TryParse(currency.CharCode);
-			return candidate != null && candidate.Equals(currency);
-		}
-
-		public static bool Contain<T>(this ICurrencySet<T> currencySet, T currency) where T: class, ICurrency
-		{
-			var candidate = currencySet.TryParse(currency.CharCode);
-			return candidate != null && candidate.Equals(currency);
+			return candidate != null && ReferenceEquals(candidate, currency);
 		}
 
 		/// <summary>
-		/// Currrency set is contains an instance of a character code
+		/// Currency set is contains specified currency
 		/// </summary>
+		public static bool Contain<T>(this ICurrencySet<T> currencySet, T currency) where T: class, ICurrency
+		{
+			var candidate = currencySet.TryParse(currency.CharCode);
+			return candidate != null && ReferenceEquals(candidate, currency);
+		}
+
+		/// <summary>
+		/// Currency set is contains an instance of a character code
+		/// </summary>
+		/// <param name="currencySet">this currency set</param>
 		/// <param name="charCode">
 		/// character code
 		/// </param>
@@ -33,6 +41,7 @@ namespace NMoney
 		/// <summary>
 		/// Return currency from character code
 		/// </summary>
+		/// <param name="currencySet">this currency set</param>
 		/// <param name="charCode">
 		/// character code
 		/// </param>

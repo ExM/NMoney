@@ -180,7 +180,7 @@ namespace NMoney
 				return true;
 
 			return Amount == other.Amount &&
-				Currency.Equals(other.Currency);
+				ReferenceEquals(Currency, other.Currency);
 		}
 
 		/// <summary>
@@ -220,7 +220,7 @@ namespace NMoney
 			if (other.noCurrency)
 				return Amount.CompareTo(0m);
 
-			if (!Currency.Equals(other.Currency))
+			if (!ReferenceEquals(Currency, other.Currency))
 				throw new InvalidOperationException("mismatch currency");
 
 			return Amount.CompareTo(other.Amount);
@@ -269,7 +269,7 @@ namespace NMoney
 			if (rhs.noCurrency)
 				return lhs;
 
-			if (!lhs.Currency.Equals(rhs.Currency))
+			if (!ReferenceEquals(lhs.Currency, rhs.Currency))
 				throw new InvalidOperationException("mismatch currency");
 
 			return new Money(lhs.Amount + rhs.Amount, lhs.Currency);
@@ -286,7 +286,7 @@ namespace NMoney
 			if (lhs.noCurrency)
 				return new Money(- rhs.Amount, rhs.Currency);
 
-			if (!lhs.Currency.Equals(rhs.Currency))
+			if (!ReferenceEquals(lhs.Currency, rhs.Currency))
 				throw new InvalidOperationException("mismatch currency");
 
 			return new Money(lhs.Amount - rhs.Amount, lhs.Currency);

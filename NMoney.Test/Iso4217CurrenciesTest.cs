@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System.Threading;
 using System.Globalization;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace NMoney
 {
@@ -11,6 +12,42 @@ namespace NMoney
 	{
 		private static readonly Iso4217.CurrencySet _set = Iso4217.CurrencySet.Instance;
 
+		[Test]
+		public void ConversionToBaseSet()
+		{
+			CurrencySet<Iso4217.Currency> convSet = _set;
+
+			IReadOnlyCollection<Iso4217.Currency> allCur = convSet.AllCurencies;
+			Iso4217.Currency cur = convSet.TryParse("EUR");
+		}
+		
+		[Test]
+		public void ConversionToInterfaceSet()
+		{
+			ICurrencySet<Iso4217.Currency> convSet = _set;
+
+			IReadOnlyCollection<Iso4217.Currency> allCur = convSet.AllCurencies;
+			Iso4217.Currency cur = convSet.TryParse("EUR");
+		}
+		
+		[Test]
+		public void ConversionToInterfaceItem()
+		{
+			ICurrencySet<ICurrency> convSet = _set;
+			
+			IReadOnlyCollection<ICurrency> allCur = convSet.AllCurencies;
+			ICurrency cur = convSet.TryParse("EUR");
+		}
+		
+		[Test]
+		public void ConversionToBaseInterface()
+		{
+			ICurrencySet convSet = _set;
+			
+			IReadOnlyCollection<ICurrency> allCur = convSet.AllCurencies;
+			ICurrency cur = convSet.TryParse("EUR");
+		}
+		
 		[Test]
 		public void AllCurrensiesFromIso4217()
 		{

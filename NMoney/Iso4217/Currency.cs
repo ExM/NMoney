@@ -4,23 +4,35 @@ using System.Globalization;
 
 namespace NMoney.Iso4217
 {
+	/// <summary>
+	/// Base class that represents a currency from ISO 4217 
+	/// </summary>
 	public class Currency: NMoney.Currency
 	{
 		private static readonly ResourceManager _rMan = new ResourceManager("NMoney.Iso4217.Names", typeof(Currency).Assembly);
 
-		private readonly int _numCode;
-		
-		internal Currency(string charCode, string sym, int num, decimal mu)
+		/// <inheritdoc />
+		public Currency(string charCode, string sym, int num, decimal mu)
 			:base(charCode, mu, sym)
 		{
-			_numCode = num;
+			NumCode = num;
 		}
 		
+		/// <summary>
+		/// Initialize of copy of exists currency
+		/// </summary>
+		public Currency(Currency source)
+			:this(source.CharCode, source.Symbol, source.NumCode, source.MinorUnit)
+		{
+		}
+
+		/// <inheritdoc />
 		public override string ToString()
 		{
 			return ToString("n", null);
 		}
 
+		/// <inheritdoc />
 		public override string ToString(string format, IFormatProvider formatProvider)
 		{
 			switch (format)
@@ -38,7 +50,10 @@ namespace NMoney.Iso4217
 			}
 		}
 
-		public int NumCode => _numCode;
+		/// <summary>
+		/// Number code of currency from ISO 4217
+		/// </summary>
+		public int NumCode { get; }
 	}
 }
 
