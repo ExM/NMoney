@@ -16,3 +16,4 @@ packages/*
 TestResults/*
 /.idea/
 /paket-files
+/.vs
