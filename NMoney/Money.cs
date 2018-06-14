@@ -10,12 +10,12 @@ namespace NMoney
 		/// <summary>
 		/// amount of money
 		/// </summary>
-		public decimal Amount { get; private set; }
+		public decimal Amount { get; }
 		
 		/// <summary>
 		/// currency
 		/// </summary>
-		public ICurrency Currency { get; private set; }
+		public ICurrency Currency { get; }
 		
 		/// <summary>
 		/// creates a amount of money in any currency
@@ -29,8 +29,8 @@ namespace NMoney
 		public Money(decimal amount, ICurrency currency)
 			:this()
 		{
-			if (amount != 0m && currency == null)
-				throw new ArgumentNullException("currency");
+			if (currency == null)
+				throw new ArgumentNullException(nameof(currency));
 			Amount = amount;
 			Currency = currency;
 		}
@@ -40,9 +40,9 @@ namespace NMoney
 		/// </summary>
 		public override string ToString()
 		{
-			if (Currency == null)
+			if (noCurrency)
 				return "0";
-			return string.Format ("{0:G} {1}", Amount, Currency.CharCode);
+			return $"{Amount:G} {Currency.CharCode}";
 		}
 		
 		/// <summary>
@@ -52,7 +52,7 @@ namespace NMoney
 		{
 			get
 			{
-				if (Currency == null || Currency.MinorUnit == 0m)
+				if (noCurrency || Currency.MinorUnit == 0m)
 					return true;
 				decimal mu = Amount/Currency.MinorUnit;
 				return decimal.Truncate(mu) == mu;
@@ -66,7 +66,7 @@ namespace NMoney
 		{
 			get
 			{
-				if (Currency == null)
+				if (noCurrency)
 					return 0m;
 				if(Currency.MinorUnit == 0m)
 					throw new InvalidOperationException(string.Format("undefined minor unit in {0} currency", Currency.CharCode));
@@ -82,7 +82,7 @@ namespace NMoney
 		/// </returns>
 		public Money FloorMinorUnit()
 		{
-			if (Currency == null)
+			if (noCurrency)
 				return Zero;
 			if(Currency.MinorUnit == 0m)
 				return this;
@@ -97,7 +97,7 @@ namespace NMoney
 		/// </returns>
 		public Money FloorMajorUnit()
 		{
-			if (Currency == null)
+			if (noCurrency)
 				return Zero;
 			return new Money(decimal.Floor(Amount), Currency);
 		}
@@ -110,7 +110,7 @@ namespace NMoney
 		/// </returns>
 		public Money CeilingMinorUnit()
 		{
-			if (Currency == null)
+			if (noCurrency)
 				return Zero;
 			if(Currency.MinorUnit == 0m)
 				return this;
@@ -125,7 +125,7 @@ namespace NMoney
 		/// </returns>
 		public Money CeilingMajorUnit()
 		{
-			if (Currency == null)
+			if (noCurrency)
 				return Zero;
 			return new Money(decimal.Ceiling(Amount), Currency);
 		}
@@ -135,6 +135,8 @@ namespace NMoney
 		/// </summary>
 		public static Money operator *(Money lhs, decimal rhs)
 		{
+			if (lhs.noCurrency)
+				return Zero;
 			return new Money(rhs * lhs.Amount, lhs.Currency);
 		}
 		
@@ -143,6 +145,8 @@ namespace NMoney
 		/// </summary>
 		public static Money operator *(decimal lhs, Money rhs)
 		{
+			if (rhs.noCurrency)
+				return Zero;
 			return new Money(lhs * rhs.Amount, rhs.Currency);
 		}
 		
@@ -151,6 +155,8 @@ namespace NMoney
 		/// </summary>
 		public static Money operator /(Money lhs, decimal rhs)
 		{
+			if (lhs.noCurrency)
+				return Zero;
 			return new Money(lhs.Amount / rhs, lhs.Currency);
 		}
 
@@ -174,7 +180,7 @@ namespace NMoney
 				return true;
 
 			return Amount == other.Amount &&
-				Currency == other.Currency;
+				ReferenceEquals(Currency, other.Currency);
 		}
 
 		/// <summary>
@@ -199,7 +205,7 @@ namespace NMoney
 		/// <returns></returns>
 		public override int GetHashCode()
 		{
-			return Amount.GetHashCode() ^ ((Currency == null) ? 0 : Currency.GetHashCode());
+			return Amount.GetHashCode() ^ (noCurrency ? 0 : Currency.GetHashCode());
 		}
 
 		/// <summary>
@@ -208,13 +214,13 @@ namespace NMoney
 		/// </summary>
 		public int CompareTo(Money other)
 		{
-			if(Currency == null)
+			if(noCurrency)
 				return 0m.CompareTo(other.Amount);
 
-			if (other.Currency == null)
+			if (other.noCurrency)
 				return Amount.CompareTo(0m);
 
-			if (Currency != other.Currency)
+			if (!ReferenceEquals(Currency, other.Currency))
 				throw new InvalidOperationException("mismatch currency");
 
 			return Amount.CompareTo(other.Amount);
@@ -257,13 +263,13 @@ namespace NMoney
 		/// </summary>
 		public static Money operator +(Money lhs, Money rhs)
 		{
-			if (lhs.Currency == null)
+			if (lhs.noCurrency)
 				return rhs;
 
-			if (rhs.Currency == null)
+			if (rhs.noCurrency)
 				return lhs;
 
-			if (lhs.Currency != rhs.Currency)
+			if (!ReferenceEquals(lhs.Currency, rhs.Currency))
 				throw new InvalidOperationException("mismatch currency");
 
 			return new Money(lhs.Amount + rhs.Amount, lhs.Currency);
@@ -274,17 +280,19 @@ namespace NMoney
 		/// </summary>
 		public static Money operator -(Money lhs, Money rhs)
 		{
-			if (rhs.Currency == null)
+			if (rhs.noCurrency)
 				return lhs;
 
-			if (lhs.Currency == null)
+			if (lhs.noCurrency)
 				return new Money(- rhs.Amount, rhs.Currency);
 
-			if (lhs.Currency != rhs.Currency)
+			if (!ReferenceEquals(lhs.Currency, rhs.Currency))
 				throw new InvalidOperationException("mismatch currency");
 
 			return new Money(lhs.Amount - rhs.Amount, lhs.Currency);
 		}
+
+		private bool noCurrency => Equals(Currency, null);
 
 		/// <summary>
 		/// Default value

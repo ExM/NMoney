@@ -5,25 +5,20 @@ namespace NMoney
 	/// <summary>
 	/// interface providing information on currency
 	/// </summary>
-	public interface ICurrency
+	public interface ICurrency: IFormattable
 	{
 		/// <summary>
-		/// character code
+		/// Character code of currency
 		/// </summary>
 		string CharCode {get;}
 		
 		/// <summary>
-		/// number code
-		/// </summary>
-		int NumCode {get;}
-		
-		/// <summary>
-		/// symbol of currency
+		/// Symbol of currency
 		/// </summary>
 		string Symbol {get;}
 		
 		/// <summary>
-		/// minor of unit scale
+		/// Minor of unit scale
 		/// </summary>
 		decimal MinorUnit {get;}
 	}

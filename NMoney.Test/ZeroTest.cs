@@ -9,11 +9,9 @@ namespace NMoney
 	public class ZeroTest
 	{
 		[Test]
-		public void Create()
+		public void CreateWithNoCurrency()
 		{
-			var mu = new Money(0m, null);
-
-			Assert.IsTrue(mu == Money.Zero);
+			Assert.Throws<ArgumentNullException>(() => new Money(0m, null));
 		}
 
 		[Test]
@@ -55,14 +53,14 @@ namespace NMoney
 		[Test]
 		public void Equal()
 		{
-			Assert.AreEqual(Iso4217.RUB.Money(0m), Money.Zero);
+			Assert.AreEqual(Iso4217.CurrencySet.RUB.Money(0m), Money.Zero);
 			Assert.AreEqual(Money.Zero, Money.Zero);
 		}
 		
 		[Test]
 		public void Muliply()
 		{
-			var m = Iso4217.EUR.Money(1.23m);
+			var m = Iso4217.CurrencySet.EUR.Money(1.23m);
 			Assert.AreEqual(Money.Zero, Money.Zero * 2);
 			Assert.AreEqual(Money.Zero, 2 * Money.Zero);
 			Assert.AreEqual(Money.Zero, m * 0);
@@ -78,7 +76,7 @@ namespace NMoney
 		[Test]
 		public void Additional()
 		{
-			var m = Iso4217.EUR.Money(1.23m);
+			var m = Iso4217.CurrencySet.EUR.Money(1.23m);
 			Assert.AreEqual(Money.Zero, Money.Zero + Money.Zero);
 			Assert.AreEqual(m, m + Money.Zero);
 			Assert.AreEqual(m, Money.Zero + m);
@@ -87,7 +85,7 @@ namespace NMoney
 		[Test]
 		public void Subtract()
 		{
-			var m = Iso4217.EUR.Money(1.23m);
+			var m = Iso4217.CurrencySet.EUR.Money(1.23m);
 			Assert.AreEqual(Money.Zero, Money.Zero - Money.Zero);
 			Assert.AreEqual(Money.Zero, m - m);
 			Assert.AreEqual(m, m - Money.Zero);
@@ -109,7 +107,7 @@ namespace NMoney
 		{
 			var l = Money.Zero;
 			var lE = Money.Zero;
-			var r = Iso4217.RUB.Money(2.23m);
+			var r = Iso4217.CurrencySet.RUB.Money(2.23m);
 
 			Assert.IsTrue(l < r);
 			Assert.IsTrue(l <= r);
@@ -130,9 +128,9 @@ namespace NMoney
 		public void HashCode()
 		{
 			var m1 = Money.Zero.GetHashCode();
-			var m1E = new Money(0m, null).GetHashCode();
-			var m2 = Iso4217.RUB.Money(1m).GetHashCode();
-			var m3 = (Iso4217.RUB.Money(1m) * 0).GetHashCode();
+			var m1E = (Money.Zero * 2).GetHashCode();
+			var m2 = Iso4217.CurrencySet.RUB.Money(1m).GetHashCode();
+			var m3 = (Iso4217.CurrencySet.RUB.Money(1m) * 0).GetHashCode();
 
 			Assert.AreEqual(m1, m1E);
 			Assert.AreNotEqual(m1, m2);

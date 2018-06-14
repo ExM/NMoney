@@ -1,5 +1,3 @@
-using System;
-
 namespace NMoney
 {
 	/// <summary>
