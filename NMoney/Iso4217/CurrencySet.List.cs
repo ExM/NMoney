@@ -388,7 +388,7 @@ namespace NMoney.Iso4217
 		/// <summary>
 		/// Ouguiya
 		/// </summary>
-		public static Currency MRO => MROCache.Instance;
+		public static Currency MRU => MRUCache.Instance;
 		/// <summary>
 		/// Mauritius Rupee
 		/// </summary>
@@ -458,7 +458,7 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency PGK => PGKCache.Instance;
 		/// <summary>
-		/// Philippine Peso
+		/// Philippine Piso
 		/// </summary>
 		public static Currency PHP => PHPCache.Instance;
 		/// <summary>
@@ -540,7 +540,7 @@ namespace NMoney.Iso4217
 		/// <summary>
 		/// Dobra
 		/// </summary>
-		public static Currency STD => STDCache.Instance;
+		public static Currency STN => STNCache.Instance;
 		/// <summary>
 		/// El Salvador Colon
 		/// </summary>
@@ -821,7 +821,7 @@ namespace NMoney.Iso4217
 				MWK,
 				MYR,
 				MVR,
-				MRO,
+				MRU,
 				MUR,
 				XUA,
 				MXN,
@@ -849,7 +849,7 @@ namespace NMoney.Iso4217
 				RWF,
 				SHP,
 				WST,
-				STD,
+				STN,
 				SAR,
 				RSD,
 				SCR,
@@ -1378,9 +1378,9 @@ namespace NMoney.Iso4217
 			internal static readonly Currency Instance = new Currency("MOP", "P", 446, 0.01m);
 		}
 
-		private static class MROCache
+		private static class MRUCache
 		{
-			internal static readonly Currency Instance = new Currency("MRO", "UM", 478, 0.01m);
+			internal static readonly Currency Instance = new Currency("MRU", "UM", 929, 0.01m);
 		}
 
 		private static class MURCache
@@ -1568,9 +1568,9 @@ namespace NMoney.Iso4217
 			internal static readonly Currency Instance = new Currency("SSP", "£", 728, 0.01m);
 		}
 
-		private static class STDCache
+		private static class STNCache
 		{
-			internal static readonly Currency Instance = new Currency("STD", "Db", 678, 0.01m);
+			internal static readonly Currency Instance = new Currency("STN", "¤", 930, 0.01m);
 		}
 
 		private static class SVCCache
