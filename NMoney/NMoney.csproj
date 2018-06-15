@@ -1,100 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FE869DA2-B1B0-4E31-B418-7334832A59F6}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>NMoney</RootNamespace>
+    <AssemblyTitle>NMoney</AssemblyTitle>
     <AssemblyName>NMoney</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <GenerateDocumentation>true</GenerateDocumentation>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\Debug\NMoney.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-    <GenerateDocumentation>true</GenerateDocumentation>
-    <DocumentationFile>bin\Release\NMoney.xml</DocumentationFile>
-    <DebugSymbols>true</DebugSymbols>
-    <Prefer32Bit>false</Prefer32Bit>
+    <TargetFrameworks>netstandard2;net461</TargetFrameworks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Company>ExM</Company>
+    <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
+    <Version>2.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Currency.cs" />
-    <Compile Include="CurrencySet.cs" />
-    <Compile Include="CurrencySetExtensions.cs" />
-    <Compile Include="ICurrencySet.cs" />
-    <Compile Include="ICurrencySet%271.cs" />
-    <Compile Include="CurrencySet%271.cs" />
-    <Compile Include="Money.cs" />
-    <Compile Include="ICurrency.cs" />
-    <Compile Include="Iso4217\Currency.cs" />
-    <Compile Include="Iso4217\CurrencySet.cs" />
-    <Compile Include="Iso4217\CurrencySet.List.cs">
-      <DependentUpon>CurrencySet.List.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="CurrencyExtension.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <None Include="Iso4217\doc\nameOverride.csv" />
-    <None Include="Iso4217\doc\unicodeSymbols.csv" />
-    <None Include="Iso4217\templates\Iso4217table.ttinclude" />
-    <None Include="paket.references" />
-    <None Include="paket.template" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Iso4217\CurrencySet.List.tt">
+    <None Update="Iso4217\CurrencySet.List.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CurrencySet.List.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Iso4217\Names.ru.resx" />
-    <EmbeddedResource Include="Iso4217\Names.resx">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Names.tt</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Iso4217\Names.tt">
+    <None Update="Iso4217\Names.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Names.resx</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="Iso4217\doc\list_one.xml" />
-    <None Include="Iso4217\doc\references.txt" />
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-  <Import Project="..\.paket\paket.targets" />
+  <ItemGroup>
+    <Compile Update="Iso4217\CurrencySet.List.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CurrencySet.List.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Iso4217\Names.resx">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Names.tt</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

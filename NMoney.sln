@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{83F5FEDC-8CD7-47C9-B580-F52D9BDFC802}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,9 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{6C48742A-D94
 		doc\Finance-Currency-icon.png = doc\Finance-Currency-icon.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMoney", "NMoney\NMoney.csproj", "{FE869DA2-B1B0-4E31-B418-7334832A59F6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMoney.Test", "NMoney.Test\NMoney.Test.csproj", "{A8EEFA5D-A3B0-4E35-B5FE-3D40227BD679}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMoney", "NMoney\NMoney.csproj", "{14013B5A-71FF-4A0D-BD55-1BF3EE1C88B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,16 +22,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FE869DA2-B1B0-4E31-B418-7334832A59F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE869DA2-B1B0-4E31-B418-7334832A59F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE869DA2-B1B0-4E31-B418-7334832A59F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE869DA2-B1B0-4E31-B418-7334832A59F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8EEFA5D-A3B0-4E35-B5FE-3D40227BD679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8EEFA5D-A3B0-4E35-B5FE-3D40227BD679}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8EEFA5D-A3B0-4E35-B5FE-3D40227BD679}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8EEFA5D-A3B0-4E35-B5FE-3D40227BD679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14013B5A-71FF-4A0D-BD55-1BF3EE1C88B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14013B5A-71FF-4A0D-BD55-1BF3EE1C88B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14013B5A-71FF-4A0D-BD55-1BF3EE1C88B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14013B5A-71FF-4A0D-BD55-1BF3EE1C88B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6D5DE7A-1AAE-4243-A1FF-9417757946AC}
 	EndGlobalSection
 EndGlobal

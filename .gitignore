@@ -17,3 +17,4 @@ TestResults/*
 /.idea/
 /paket-files
 /.vs
+NMoney/obj
