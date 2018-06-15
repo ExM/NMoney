@@ -3,4 +3,6 @@ version 5.156.5
 framework: net461, netcoreapp2.0
 
 source https://www.nuget.org/api/v2/
-nuget NUnit ~> 3.0
+nuget NUnit ~> 3.10
+nuget NUnit3TestAdapter ~> 3.10
+nuget Microsoft.NET.Test.Sdk ~> 15.5

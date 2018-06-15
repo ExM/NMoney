@@ -18,3 +18,4 @@ TestResults/*
 /paket-files
 /.vs
 NMoney/obj
+*/obj/
