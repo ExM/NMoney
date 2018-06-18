@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AssemblyTitle>NMoney</AssemblyTitle>
     <AssemblyName>NMoney</AssemblyName>
-    <TargetFrameworks>netstandard2;net461</TargetFrameworks>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyVersion>2.0.0.0</AssemblyVersion>
     <FileVersion>2.0.0.0</FileVersion>
