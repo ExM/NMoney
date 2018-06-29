@@ -39,5 +39,4 @@
       <DependentUpon>Names.tt</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{83F5FEDC-8CD7-47C9-B580-F52D9BDFC802}"
-	ProjectSection(SolutionItems) = preProject
-		paket.dependencies = paket.dependencies
-		paket.lock = paket.lock
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{6C48742A-D944-4BF1-A4FB-6BBF1ECB7E58}"
 	ProjectSection(SolutionItems) = preProject
 		doc\Finance-Currency-icon.png = doc\Finance-Currency-icon.png
