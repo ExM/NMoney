@@ -8,5 +8,3 @@ description
   Library for working with sums of money.
   List of world currencies in accordance with ISO 4217
 tags money currencies ISO4217
-files
-  bin/Release/netstandard2.0/ru/* ==> lib/netstandard2.0/ru
