@@ -1,4 +1,7 @@
-﻿namespace NMoney.Iso4217
+﻿using System;
+using System.Collections.Generic;
+
+namespace NMoney.Iso4217
 {
 	public partial class CurrencySet
 	{
@@ -385,7 +388,7 @@
 		/// <summary>
 		/// Ouguiya
 		/// </summary>
-		public static Currency MRO => MROCache.Instance;
+		public static Currency MRU => MRUCache.Instance;
 		/// <summary>
 		/// Mauritius Rupee
 		/// </summary>
@@ -455,7 +458,7 @@
 		/// </summary>
 		public static Currency PGK => PGKCache.Instance;
 		/// <summary>
-		/// Philippine Peso
+		/// Philippine Piso
 		/// </summary>
 		public static Currency PHP => PHPCache.Instance;
 		/// <summary>
@@ -537,7 +540,7 @@
 		/// <summary>
 		/// Dobra
 		/// </summary>
-		public static Currency STD => STDCache.Instance;
+		public static Currency STN => STNCache.Instance;
 		/// <summary>
 		/// El Salvador Colon
 		/// </summary>
@@ -818,7 +821,7 @@
 				MWK,
 				MYR,
 				MVR,
-				MRO,
+				MRU,
 				MUR,
 				XUA,
 				MXN,
@@ -846,7 +849,7 @@
 				RWF,
 				SHP,
 				WST,
-				STD,
+				STN,
 				SAR,
 				RSD,
 				SCR,
@@ -912,7 +915,7 @@
 
 		private static class ALLCache
 		{
-			internal static readonly Currency Instance = new Currency("ALL", "Lek", 8, 0.01m);
+			internal static readonly Currency Instance = new Currency("ALL", "L", 8, 0.01m);
 		}
 
 		private static class AMDCache
@@ -927,7 +930,7 @@
 
 		private static class AOACache
 		{
-			internal static readonly Currency Instance = new Currency("AOA", "¤", 973, 0.01m);
+			internal static readonly Currency Instance = new Currency("AOA", "Kz", 973, 0.01m);
 		}
 
 		private static class ARSCache
@@ -962,7 +965,7 @@
 
 		private static class BDTCache
 		{
-			internal static readonly Currency Instance = new Currency("BDT", "¤", 50, 0.01m);
+			internal static readonly Currency Instance = new Currency("BDT", "৳", 50, 0.01m);
 		}
 
 		private static class BGNCache
@@ -992,7 +995,7 @@
 
 		private static class BOBCache
 		{
-			internal static readonly Currency Instance = new Currency("BOB", "$b", 68, 0.01m);
+			internal static readonly Currency Instance = new Currency("BOB", "Bs.", 68, 0.01m);
 		}
 
 		private static class BOVCache
@@ -1012,7 +1015,7 @@
 
 		private static class BTNCache
 		{
-			internal static readonly Currency Instance = new Currency("BTN", "¤", 64, 0.01m);
+			internal static readonly Currency Instance = new Currency("BTN", "Nu.", 64, 0.01m);
 		}
 
 		private static class BWPCache
@@ -1037,7 +1040,7 @@
 
 		private static class CDFCache
 		{
-			internal static readonly Currency Instance = new Currency("CDF", "¤", 976, 0.01m);
+			internal static readonly Currency Instance = new Currency("CDF", "Fr", 976, 0.01m);
 		}
 
 		private static class CHECache
@@ -1047,7 +1050,7 @@
 
 		private static class CHFCache
 		{
-			internal static readonly Currency Instance = new Currency("CHF", "CHF", 756, 0.01m);
+			internal static readonly Currency Instance = new Currency("CHF", "Fr", 756, 0.01m);
 		}
 
 		private static class CHWCache
@@ -1087,7 +1090,7 @@
 
 		private static class CUCCache
 		{
-			internal static readonly Currency Instance = new Currency("CUC", "¤", 931, 0.01m);
+			internal static readonly Currency Instance = new Currency("CUC", "$", 931, 0.01m);
 		}
 
 		private static class CUPCache
@@ -1107,7 +1110,7 @@
 
 		private static class DJFCache
 		{
-			internal static readonly Currency Instance = new Currency("DJF", "¤", 262, 1m);
+			internal static readonly Currency Instance = new Currency("DJF", "Fr", 262, 1m);
 		}
 
 		private static class DKKCache
@@ -1137,7 +1140,7 @@
 
 		private static class ETBCache
 		{
-			internal static readonly Currency Instance = new Currency("ETB", "¤", 230, 0.01m);
+			internal static readonly Currency Instance = new Currency("ETB", "Br", 230, 0.01m);
 		}
 
 		private static class EURCache
@@ -1162,12 +1165,12 @@
 
 		private static class GELCache
 		{
-			internal static readonly Currency Instance = new Currency("GEL", "¤", 981, 0.01m);
+			internal static readonly Currency Instance = new Currency("GEL", "₾", 981, 0.01m);
 		}
 
 		private static class GHSCache
 		{
-			internal static readonly Currency Instance = new Currency("GHS", "¢", 936, 0.01m);
+			internal static readonly Currency Instance = new Currency("GHS", "₵", 936, 0.01m);
 		}
 
 		private static class GIPCache
@@ -1177,12 +1180,12 @@
 
 		private static class GMDCache
 		{
-			internal static readonly Currency Instance = new Currency("GMD", "¤", 270, 0.01m);
+			internal static readonly Currency Instance = new Currency("GMD", "D", 270, 0.01m);
 		}
 
 		private static class GNFCache
 		{
-			internal static readonly Currency Instance = new Currency("GNF", "¤", 324, 1m);
+			internal static readonly Currency Instance = new Currency("GNF", "Fr", 324, 1m);
 		}
 
 		private static class GTQCache
@@ -1212,7 +1215,7 @@
 
 		private static class HTGCache
 		{
-			internal static readonly Currency Instance = new Currency("HTG", "¤", 332, 0.01m);
+			internal static readonly Currency Instance = new Currency("HTG", "G", 332, 0.01m);
 		}
 
 		private static class HUFCache
@@ -1267,12 +1270,12 @@
 
 		private static class KESCache
 		{
-			internal static readonly Currency Instance = new Currency("KES", "¤", 404, 0.01m);
+			internal static readonly Currency Instance = new Currency("KES", "Sh", 404, 0.01m);
 		}
 
 		private static class KGSCache
 		{
-			internal static readonly Currency Instance = new Currency("KGS", "лв", 417, 0.01m);
+			internal static readonly Currency Instance = new Currency("KGS", "с", 417, 0.01m);
 		}
 
 		private static class KHRCache
@@ -1282,7 +1285,7 @@
 
 		private static class KMFCache
 		{
-			internal static readonly Currency Instance = new Currency("KMF", "¤", 174, 1m);
+			internal static readonly Currency Instance = new Currency("KMF", "Fr", 174, 1m);
 		}
 
 		private static class KPWCache
@@ -1307,7 +1310,7 @@
 
 		private static class KZTCache
 		{
-			internal static readonly Currency Instance = new Currency("KZT", "лв", 398, 0.01m);
+			internal static readonly Currency Instance = new Currency("KZT", "₸", 398, 0.01m);
 		}
 
 		private static class LAKCache
@@ -1317,12 +1320,12 @@
 
 		private static class LBPCache
 		{
-			internal static readonly Currency Instance = new Currency("LBP", "£", 422, 0.01m);
+			internal static readonly Currency Instance = new Currency("LBP", "¤", 422, 0.01m);
 		}
 
 		private static class LKRCache
 		{
-			internal static readonly Currency Instance = new Currency("LKR", "₨", 144, 0.01m);
+			internal static readonly Currency Instance = new Currency("LKR", "¤", 144, 0.01m);
 		}
 
 		private static class LRDCache
@@ -1332,7 +1335,7 @@
 
 		private static class LSLCache
 		{
-			internal static readonly Currency Instance = new Currency("LSL", "¤", 426, 0.01m);
+			internal static readonly Currency Instance = new Currency("LSL", "L", 426, 0.01m);
 		}
 
 		private static class LYDCache
@@ -1347,12 +1350,12 @@
 
 		private static class MDLCache
 		{
-			internal static readonly Currency Instance = new Currency("MDL", "¤", 498, 0.01m);
+			internal static readonly Currency Instance = new Currency("MDL", "L", 498, 0.01m);
 		}
 
 		private static class MGACache
 		{
-			internal static readonly Currency Instance = new Currency("MGA", "¤", 969, 0.01m);
+			internal static readonly Currency Instance = new Currency("MGA", "Ar", 969, 0.01m);
 		}
 
 		private static class MKDCache
@@ -1362,7 +1365,7 @@
 
 		private static class MMKCache
 		{
-			internal static readonly Currency Instance = new Currency("MMK", "¤", 104, 0.01m);
+			internal static readonly Currency Instance = new Currency("MMK", "Ks", 104, 0.01m);
 		}
 
 		private static class MNTCache
@@ -1372,12 +1375,12 @@
 
 		private static class MOPCache
 		{
-			internal static readonly Currency Instance = new Currency("MOP", "¤", 446, 0.01m);
+			internal static readonly Currency Instance = new Currency("MOP", "P", 446, 0.01m);
 		}
 
-		private static class MROCache
+		private static class MRUCache
 		{
-			internal static readonly Currency Instance = new Currency("MRO", "¤", 478, 0.01m);
+			internal static readonly Currency Instance = new Currency("MRU", "UM", 929, 0.01m);
 		}
 
 		private static class MURCache
@@ -1392,7 +1395,7 @@
 
 		private static class MWKCache
 		{
-			internal static readonly Currency Instance = new Currency("MWK", "¤", 454, 0.01m);
+			internal static readonly Currency Instance = new Currency("MWK", "MK", 454, 0.01m);
 		}
 
 		private static class MXNCache
@@ -1447,7 +1450,7 @@
 
 		private static class OMRCache
 		{
-			internal static readonly Currency Instance = new Currency("OMR", "﷼", 512, 0.001m);
+			internal static readonly Currency Instance = new Currency("OMR", "¤", 512, 0.001m);
 		}
 
 		private static class PABCache
@@ -1462,7 +1465,7 @@
 
 		private static class PGKCache
 		{
-			internal static readonly Currency Instance = new Currency("PGK", "¤", 598, 0.01m);
+			internal static readonly Currency Instance = new Currency("PGK", "K", 598, 0.01m);
 		}
 
 		private static class PHPCache
@@ -1482,7 +1485,7 @@
 
 		private static class PYGCache
 		{
-			internal static readonly Currency Instance = new Currency("PYG", "Gs", 600, 1m);
+			internal static readonly Currency Instance = new Currency("PYG", "₲", 600, 1m);
 		}
 
 		private static class QARCache
@@ -1497,7 +1500,7 @@
 
 		private static class RSDCache
 		{
-			internal static readonly Currency Instance = new Currency("RSD", "Дин.", 941, 0.01m);
+			internal static readonly Currency Instance = new Currency("RSD", "din.", 941, 0.01m);
 		}
 
 		private static class RUBCache
@@ -1507,12 +1510,12 @@
 
 		private static class RWFCache
 		{
-			internal static readonly Currency Instance = new Currency("RWF", "¤", 646, 1m);
+			internal static readonly Currency Instance = new Currency("RWF", "Fr", 646, 1m);
 		}
 
 		private static class SARCache
 		{
-			internal static readonly Currency Instance = new Currency("SAR", "﷼", 682, 0.01m);
+			internal static readonly Currency Instance = new Currency("SAR", "¤", 682, 0.01m);
 		}
 
 		private static class SBDCache
@@ -1547,12 +1550,12 @@
 
 		private static class SLLCache
 		{
-			internal static readonly Currency Instance = new Currency("SLL", "¤", 694, 0.01m);
+			internal static readonly Currency Instance = new Currency("SLL", "Le", 694, 0.01m);
 		}
 
 		private static class SOSCache
 		{
-			internal static readonly Currency Instance = new Currency("SOS", "S", 706, 0.01m);
+			internal static readonly Currency Instance = new Currency("SOS", "Sh", 706, 0.01m);
 		}
 
 		private static class SRDCache
@@ -1562,12 +1565,12 @@
 
 		private static class SSPCache
 		{
-			internal static readonly Currency Instance = new Currency("SSP", "¤", 728, 0.01m);
+			internal static readonly Currency Instance = new Currency("SSP", "£", 728, 0.01m);
 		}
 
-		private static class STDCache
+		private static class STNCache
 		{
-			internal static readonly Currency Instance = new Currency("STD", "¤", 678, 0.01m);
+			internal static readonly Currency Instance = new Currency("STN", "¤", 930, 0.01m);
 		}
 
 		private static class SVCCache
@@ -1582,7 +1585,7 @@
 
 		private static class SZLCache
 		{
-			internal static readonly Currency Instance = new Currency("SZL", "¤", 748, 0.01m);
+			internal static readonly Currency Instance = new Currency("SZL", "L", 748, 0.01m);
 		}
 
 		private static class THBCache
@@ -1592,12 +1595,12 @@
 
 		private static class TJSCache
 		{
-			internal static readonly Currency Instance = new Currency("TJS", "¤", 972, 0.01m);
+			internal static readonly Currency Instance = new Currency("TJS", "ЅМ", 972, 0.01m);
 		}
 
 		private static class TMTCache
 		{
-			internal static readonly Currency Instance = new Currency("TMT", "¤", 934, 0.01m);
+			internal static readonly Currency Instance = new Currency("TMT", "m", 934, 0.01m);
 		}
 
 		private static class TNDCache
@@ -1607,7 +1610,7 @@
 
 		private static class TOPCache
 		{
-			internal static readonly Currency Instance = new Currency("TOP", "¤", 776, 0.01m);
+			internal static readonly Currency Instance = new Currency("TOP", "T$", 776, 0.01m);
 		}
 
 		private static class TRYCache
@@ -1627,7 +1630,7 @@
 
 		private static class TZSCache
 		{
-			internal static readonly Currency Instance = new Currency("TZS", "¤", 834, 0.01m);
+			internal static readonly Currency Instance = new Currency("TZS", "Sh", 834, 0.01m);
 		}
 
 		private static class UAHCache
@@ -1637,7 +1640,7 @@
 
 		private static class UGXCache
 		{
-			internal static readonly Currency Instance = new Currency("UGX", "¤", 800, 1m);
+			internal static readonly Currency Instance = new Currency("UGX", "Sh", 800, 1m);
 		}
 
 		private static class USDCache
@@ -1662,7 +1665,7 @@
 
 		private static class UZSCache
 		{
-			internal static readonly Currency Instance = new Currency("UZS", "лв", 860, 0.01m);
+			internal static readonly Currency Instance = new Currency("UZS", "сўм", 860, 0.01m);
 		}
 
 		private static class VEFCache
@@ -1677,17 +1680,17 @@
 
 		private static class VUVCache
 		{
-			internal static readonly Currency Instance = new Currency("VUV", "¤", 548, 1m);
+			internal static readonly Currency Instance = new Currency("VUV", "Vt", 548, 1m);
 		}
 
 		private static class WSTCache
 		{
-			internal static readonly Currency Instance = new Currency("WST", "¤", 882, 0.01m);
+			internal static readonly Currency Instance = new Currency("WST", "T", 882, 0.01m);
 		}
 
 		private static class XAFCache
 		{
-			internal static readonly Currency Instance = new Currency("XAF", "¤", 950, 1m);
+			internal static readonly Currency Instance = new Currency("XAF", "Fr", 950, 1m);
 		}
 
 		private static class XAGCache
@@ -1732,7 +1735,7 @@
 
 		private static class XOFCache
 		{
-			internal static readonly Currency Instance = new Currency("XOF", "¤", 952, 1m);
+			internal static readonly Currency Instance = new Currency("XOF", "Fr", 952, 1m);
 		}
 
 		private static class XPDCache
@@ -1782,7 +1785,7 @@
 
 		private static class ZMWCache
 		{
-			internal static readonly Currency Instance = new Currency("ZMW", "¤", 967, 0.01m);
+			internal static readonly Currency Instance = new Currency("ZMW", "ZK", 967, 0.01m);
 		}
 
 		private static class ZWLCache

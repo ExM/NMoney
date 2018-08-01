@@ -44,7 +44,7 @@ namespace NMoney.Iso4217
 				case null:
 				case "":
 				case "n":
-					return _rMan.GetString(CharCode, formatProvider as CultureInfo);
+					return GetLocalizedName(formatProvider as CultureInfo);
 				default:
 					throw new FormatException($"unexpected format '{format}'");
 			}
@@ -54,6 +54,14 @@ namespace NMoney.Iso4217
 		/// Number code of currency from ISO 4217
 		/// </summary>
 		public int NumCode { get; }
+
+		/// <summary>
+		/// Get localized name of currency
+		/// </summary>
+		protected virtual string GetLocalizedName(CultureInfo cultureInfo)
+		{
+			return _rMan.GetString(CharCode, cultureInfo);
+		}
 	}
 }
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ISO_4217 Pblshd="2017-06-09">
+	<CcyTbl>
+		<CcyNtry>
+			<CtryNm>MAURITANIA</CtryNm>
+			<CcyNm>Ouguiya</CcyNm>
+			<Ccy>MRO</Ccy>
+			<CcyNbr>478</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
+		<CcyNtry>
+			<CtryNm>SAO TOME AND PRINCIPE</CtryNm>
+			<CcyNm>Dobra</CcyNm>
+			<Ccy>STD</Ccy>
+			<CcyNbr>678</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
+	</CcyTbl>
+</ISO_4217>

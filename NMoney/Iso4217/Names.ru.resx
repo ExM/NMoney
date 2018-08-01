@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AED" xml:space="preserve">
-    <value>Дирхам</value>
+    <value>Дирхам ОАЭ</value>
   </data>
   <data name="AFN" xml:space="preserve">
     <value>Афгани</value>
@@ -142,7 +142,7 @@
     <value>Австралийский доллар</value>
   </data>
   <data name="AWG" xml:space="preserve">
-    <value>Арубанский флорин</value>
+    <value>Флорин Арубы</value>
   </data>
   <data name="AZN" xml:space="preserve">
     <value>Азербайджанский манат</value>
@@ -346,7 +346,7 @@
     <value>Риель</value>
   </data>
   <data name="KMF" xml:space="preserve">
-    <value>Франк Комор</value>
+    <value>Коморский Франк </value>
   </data>
   <data name="KPW" xml:space="preserve">
     <value>Северо-корейская вона</value>
@@ -402,6 +402,9 @@
   <data name="MOP" xml:space="preserve">
     <value>Патака</value>
   </data>
+  <data name="MRU" xml:space="preserve">
+    <value>Угия</value>
+  </data>
   <data name="MUR" xml:space="preserve">
     <value>Маврикийская рупия</value>
   </data>
@@ -409,7 +412,7 @@
     <value>Руфия</value>
   </data>
   <data name="MWK" xml:space="preserve">
-    <value>Квача</value>
+    <value>Малавийская Квача</value>
   </data>
   <data name="MXN" xml:space="preserve">
     <value>Мексиканское песо</value>
@@ -511,7 +514,10 @@
     <value>Суринамский доллар</value>
   </data>
   <data name="SSP" xml:space="preserve">
-    <value>Южносуданский фунт</value>
+    <value>Южно-Суданский фунт</value>
+  </data>
+  <data name="STN" xml:space="preserve">
+    <value>Добра</value>
   </data>
   <data name="SVC" xml:space="preserve">
     <value>Сальвадорский колон</value>
@@ -559,7 +565,7 @@
     <value>Доллар США</value>
   </data>
   <data name="USN" xml:space="preserve">
-    <value>US Dollar (Next day)</value>
+    <value>Доллар США (на следующий день)</value>
   </data>
   <data name="UYI" xml:space="preserve">
     <value>Уругвайское песо в индексированных единицах</value>
@@ -571,7 +577,7 @@
     <value>Узбекский сум</value>
   </data>
   <data name="VEF" xml:space="preserve">
-    <value>Боливар фуэрте</value>
+    <value>Боливар</value>
   </data>
   <data name="VND" xml:space="preserve">
     <value>Донг</value>
@@ -604,7 +610,7 @@
     <value>EUA-17</value>
   </data>
   <data name="XCD" xml:space="preserve">
-    <value>Восточно-карибский доллар</value>
+    <value>Восточно-Карибский доллар</value>
   </data>
   <data name="XDR" xml:space="preserve">
     <value>Специальные права заимствования</value>
@@ -627,6 +633,9 @@
   <data name="XTS" xml:space="preserve">
     <value>Код для тестовых целей</value>
   </data>
+  <data name="XUA" xml:space="preserve">
+    <value>Расчётная единица АБР</value>
+  </data>
   <data name="XXX" xml:space="preserve">
     <value>Отсутствие валюты</value>
   </data>
@@ -635,9 +644,6 @@
   </data>
   <data name="ZAR" xml:space="preserve">
     <value>Рэнд</value>
-  </data>
-  <data name="ZMK" xml:space="preserve">
-    <value>Замбийская квача</value>
   </data>
   <data name="ZMW" xml:space="preserve">
     <value>Замбийская квача</value>

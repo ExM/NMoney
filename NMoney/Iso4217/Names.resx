@@ -343,7 +343,7 @@
   <data name="MOP" xml:space="preserve">
     <value>Pataca</value>
   </data>
-  <data name="MRO" xml:space="preserve">
+  <data name="MRU" xml:space="preserve">
     <value>Ouguiya</value>
   </data>
   <data name="MUR" xml:space="preserve">
@@ -398,7 +398,7 @@
     <value>Kina</value>
   </data>
   <data name="PHP" xml:space="preserve">
-    <value>Philippine Peso</value>
+    <value>Philippine Piso</value>
   </data>
   <data name="PKR" xml:space="preserve">
     <value>Pakistan Rupee</value>
@@ -457,7 +457,7 @@
   <data name="SSP" xml:space="preserve">
     <value>South Sudanese Pound</value>
   </data>
-  <data name="STD" xml:space="preserve">
+  <data name="STN" xml:space="preserve">
     <value>Dobra</value>
   </data>
   <data name="SVC" xml:space="preserve">
