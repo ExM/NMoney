@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ISO_4217 Pblshd="2017-06-09">
+<ISO_4217 Pblshd="2016-07-01">
 	<CcyTbl>
 		<CcyNtry>
 			<CtryNm>MAURITANIA</CtryNm>
@@ -14,6 +14,13 @@
 			<Ccy>STD</Ccy>
 			<CcyNbr>678</CcyNbr>
 			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
+		<CcyNtry>
+			<CtryNm>BELARUS</CtryNm>
+			<CcyNm>Belarusian Ruble</CcyNm>
+			<Ccy>BYR</Ccy>
+			<CcyNbr>974</CcyNbr>
+			<CcyMnrUnts>0</CcyMnrUnts>
 		</CcyNtry>
 	</CcyTbl>
 </ISO_4217>

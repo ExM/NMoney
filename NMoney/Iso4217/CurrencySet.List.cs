@@ -606,7 +606,7 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency USN => USNCache.Instance;
 		/// <summary>
-		/// Uruguay Peso en Unidades Indexadas (URUIURUI)
+		/// Uruguay Peso en Unidades Indexadas (UI)
 		/// </summary>
 		public static Currency UYI => UYICache.Instance;
 		/// <summary>

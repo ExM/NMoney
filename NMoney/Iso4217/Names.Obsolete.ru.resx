@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BYR" xml:space="preserve">
+    <value>Белорусский рубль</value>
+  </data>
   <data name="MRO" xml:space="preserve">
     <value>Угия</value>
   </data>

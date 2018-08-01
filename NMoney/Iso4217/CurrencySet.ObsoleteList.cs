@@ -6,6 +6,11 @@ namespace NMoney.Iso4217
 	public partial class CurrencySet
 	{
 		/// <summary>
+		/// Belarusian Ruble
+		/// </summary>
+		[Obsolete]
+		public static Currency BYR => BYRCache.Instance;
+		/// <summary>
 		/// Ouguiya
 		/// </summary>
 		[Obsolete]
@@ -17,6 +22,11 @@ namespace NMoney.Iso4217
 		public static Currency STD => STDCache.Instance;
 
 		
+		private static class BYRCache
+		{
+			internal static readonly Currency Instance = new ObsoleteCurrency("BYR", "¤", 974, 1m);
+		}
+
 		private static class MROCache
 		{
 			internal static readonly Currency Instance = new ObsoleteCurrency("MRO", "UM", 478, 0.01m);
