@@ -67,4 +67,7 @@
   <data name="STD" xml:space="preserve">
     <value>Dobra</value>
   </data>
+  <data name="VEF" xml:space="preserve">
+    <value>Bolívar</value>
+  </data>
 </root>

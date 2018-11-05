@@ -20,6 +20,11 @@ namespace NMoney.Iso4217
 		/// </summary>
 		[Obsolete]
 		public static Currency STD => STDCache.Instance;
+		/// <summary>
+		/// Bolívar
+		/// </summary>
+		[Obsolete]
+		public static Currency VEF => VEFCache.Instance;
 
 		
 		private static class BYRCache
@@ -35,6 +40,11 @@ namespace NMoney.Iso4217
 		private static class STDCache
 		{
 			internal static readonly Currency Instance = new ObsoleteCurrency("STD", "Db", 678, 0.01m);
+		}
+
+		private static class VEFCache
+		{
+			internal static readonly Currency Instance = new ObsoleteCurrency("VEF", "Bs", 937, 0.01m);
 		}
 	}
 }

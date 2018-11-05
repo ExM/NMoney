@@ -573,11 +573,14 @@
   <data name="UYU" xml:space="preserve">
     <value>Уругвайское песо</value>
   </data>
+  <data name="UYW" xml:space="preserve">
+    <value>Unidad Previsional</value>
+  </data>
   <data name="UZS" xml:space="preserve">
     <value>Узбекский сум</value>
   </data>
-  <data name="VEF" xml:space="preserve">
-    <value>Боливар</value>
+  <data name="VES" xml:space="preserve">
+    <value>Боливар Соберано</value>
   </data>
   <data name="VND" xml:space="preserve">
     <value>Донг</value>

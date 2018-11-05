@@ -458,7 +458,7 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency PGK => PGKCache.Instance;
 		/// <summary>
-		/// Philippine Piso
+		/// Philippine Peso
 		/// </summary>
 		public static Currency PHP => PHPCache.Instance;
 		/// <summary>
@@ -614,13 +614,17 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency UYU => UYUCache.Instance;
 		/// <summary>
+		/// Unidad Previsional
+		/// </summary>
+		public static Currency UYW => UYWCache.Instance;
+		/// <summary>
 		/// Uzbekistan Sum
 		/// </summary>
 		public static Currency UZS => UZSCache.Instance;
 		/// <summary>
-		/// Bolívar
+		/// Bolívar Soberano
 		/// </summary>
-		public static Currency VEF => VEFCache.Instance;
+		public static Currency VES => VESCache.Instance;
 		/// <summary>
 		/// Dong
 		/// </summary>
@@ -882,9 +886,10 @@ namespace NMoney.Iso4217
 				USN,
 				UYU,
 				UYI,
+				UYW,
 				UZS,
 				VUV,
-				VEF,
+				VES,
 				VND,
 				YER,
 				ZMW,
@@ -1663,14 +1668,19 @@ namespace NMoney.Iso4217
 			internal static readonly Currency Instance = new Currency("UYU", "$U", 858, 0.01m);
 		}
 
+		private static class UYWCache
+		{
+			internal static readonly Currency Instance = new Currency("UYW", "¤", 927, 0.0001m);
+		}
+
 		private static class UZSCache
 		{
 			internal static readonly Currency Instance = new Currency("UZS", "сўм", 860, 0.01m);
 		}
 
-		private static class VEFCache
+		private static class VESCache
 		{
-			internal static readonly Currency Instance = new Currency("VEF", "Bs", 937, 0.01m);
+			internal static readonly Currency Instance = new Currency("VES", "Bs", 928, 0.01m);
 		}
 
 		private static class VNDCache

@@ -398,7 +398,7 @@
     <value>Kina</value>
   </data>
   <data name="PHP" xml:space="preserve">
-    <value>Philippine Piso</value>
+    <value>Philippine Peso</value>
   </data>
   <data name="PKR" xml:space="preserve">
     <value>Pakistan Rupee</value>
@@ -514,11 +514,14 @@
   <data name="UYU" xml:space="preserve">
     <value>Peso Uruguayo</value>
   </data>
+  <data name="UYW" xml:space="preserve">
+    <value>Unidad Previsional</value>
+  </data>
   <data name="UZS" xml:space="preserve">
     <value>Uzbekistan Sum</value>
   </data>
-  <data name="VEF" xml:space="preserve">
-    <value>Bolívar</value>
+  <data name="VES" xml:space="preserve">
+    <value>Bolívar Soberano</value>
   </data>
   <data name="VND" xml:space="preserve">
     <value>Dong</value>

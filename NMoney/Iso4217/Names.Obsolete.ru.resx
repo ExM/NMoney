@@ -126,4 +126,7 @@
   <data name="STD" xml:space="preserve">
     <value>Добра</value>
   </data>
+  <data name="VEF" xml:space="preserve">
+    <value>Боливар</value>
+  </data>
 </root>

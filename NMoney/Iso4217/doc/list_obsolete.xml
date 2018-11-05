@@ -22,5 +22,12 @@
 			<CcyNbr>974</CcyNbr>
 			<CcyMnrUnts>0</CcyMnrUnts>
 		</CcyNtry>
+		<CcyNtry>
+			<CtryNm>VENEZUELA (BOLIVARIAN REPUBLIC OF)</CtryNm>
+			<CcyNm>Bolívar</CcyNm>
+			<Ccy>VEF</Ccy>
+			<CcyNbr>937</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
 	</CcyTbl>
 </ISO_4217>
