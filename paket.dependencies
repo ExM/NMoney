@@ -6,3 +6,6 @@ source https://www.nuget.org/api/v2/
 nuget NUnit ~> 3.10
 nuget NUnit3TestAdapter ~> 3.10
 nuget Microsoft.NET.Test.Sdk ~> 15.5
+nuget MongoDB.Bson ~> 2
+nuget MongoDB.Driver.Core ~> 2
+nuget MongoDB.Driver ~> 2

@@ -1,0 +1,6 @@
+NUnit
+NUnit3TestAdapter
+Microsoft.NET.Test.Sdk
+MongoDB.Bson
+MongoDB.Driver
+MongoDB.Driver.Core
