@@ -102,7 +102,7 @@ namespace NMoney.Bson.Tests
 				{ _customCurrencyFieldName, currency.CharCode },
 				{ _customAmountFieldName, new BsonDecimal128(amount) },
 			};
-			Money value = default;
+			Money value = default(Money);
 			Assert.DoesNotThrow(() => value = BsonSerializer.Deserialize<Money>(bsonDoc));
 			Assert.Multiple(() =>
 			{

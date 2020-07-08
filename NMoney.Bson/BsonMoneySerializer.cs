@@ -112,7 +112,7 @@ namespace NMoney.Bson
 
 			reader.ReadStartDocument();
 
-			decimal amount = default;
+			decimal amount = default(decimal);
 			ICurrency currency = null;
 			while (reader.ReadBsonType() != BsonType.EndOfDocument)
 			{
