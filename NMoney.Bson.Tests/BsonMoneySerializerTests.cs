@@ -134,6 +134,45 @@ namespace NMoney.Bson.Tests
 			Assert.That(value.Money, Is.EqualTo(Money.Zero));
 		}
 
+		[Test]
+		public void ThrowWhenNoCurrencyElement()
+		{
+			var amount = 1.23m;
+			var bsonDoc = new BsonDocument()
+			{
+				{ _customAmountFieldName, new BsonDecimal128(amount) },
+			};
+			var ex = Assert.Catch<BsonSerializationException>(() => BsonSerializer.Deserialize<Money>(bsonDoc));
+			Assert.That(ex.Message, Is.EqualTo($"Document does not contains field {_customCurrencyFieldName}"));
+		}
+
+		[Test]
+		public void ThrowWhenNoAmountElement()
+		{
+			var currency = Iso4217.CurrencySet.USD;
+			var bsonDoc = new BsonDocument()
+			{
+				{ _customCurrencyFieldName, currency.CharCode },
+			};
+			var ex = Assert.Catch<BsonSerializationException>(() => BsonSerializer.Deserialize<Money>(bsonDoc));
+			Assert.That(ex.Message, Is.EqualTo($"Document does not contains field {_customAmountFieldName}"));
+		}
+
+		[Test]
+		public void ThrowWhenInvalidElement()
+		{
+			var amount = 1.23m;
+			var currency = Iso4217.CurrencySet.USD;
+			var invalidElement = "field";
+			var bsonDoc = new BsonDocument()
+			{
+				{ _customAmountFieldName, new BsonDecimal128(amount) },
+				{ _customCurrencyFieldName, currency.CharCode },
+				{ invalidElement, "value" }
+			};
+			var ex = Assert.Catch<BsonSerializationException>(() => BsonSerializer.Deserialize<Money>(bsonDoc));
+			Assert.That(ex.Message, Is.EqualTo($"Invalid element: '{invalidElement}'."));
+		}
 		private class Stub
 		{
 			[BsonElement(_moneyField)]

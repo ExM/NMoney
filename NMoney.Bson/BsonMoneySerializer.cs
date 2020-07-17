@@ -108,11 +108,11 @@ namespace NMoney.Bson
 			}
 
 			if (bsonType != BsonType.Document)
-				throw new FormatException($"Cannot deserialize BsonString from BsonType {bsonType}.");
+				throw new FormatException($"Cannot deserialize Money from BsonType {bsonType}.");
 
 			reader.ReadStartDocument();
 
-			decimal amount = default(decimal);
+			decimal? amount = null;
 			ICurrency currency = null;
 			while (reader.ReadBsonType() != BsonType.EndOfDocument)
 			{
@@ -129,9 +129,11 @@ namespace NMoney.Bson
 			reader.ReadEndDocument();
 
 			if (currency is null)
-				throw new BsonSerializationException($"Document does not contains field {_currencySerializer}");
+				throw new BsonSerializationException($"Document does not contains field {_currencyFieldName}");
+			if (amount is null)
+				throw new BsonSerializationException($"Document does not contains field {_amountFieldName}");
 
-			return new Money(amount, currency);
+			return new Money(amount.Value, currency);
 		}
 
 		/// <summary>
