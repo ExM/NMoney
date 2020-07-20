@@ -1,5 +1,6 @@
 type project
 include-pdbs true
+interproject-references keep-major
 authors Anatoliy Koperin, Pavel Laptov
 licenseUrl https://github.com/ExM/NMoney/raw/master/LICENSE
 projectUrl https://github.com/ExM/NMoney
