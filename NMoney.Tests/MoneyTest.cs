@@ -134,7 +134,21 @@ namespace NMoney
 			Assert.IsFalse(m1.Equals((object)"123"));
 			Assert.IsTrue(m1.Equals((object)m1E));
 		}
-		
+
+		[Test]
+		public void ZeroAmountEquality()
+		{
+			var rub1 = Iso4217.CurrencySet.RUB.Money(0m);
+			var rub2 = Iso4217.CurrencySet.RUB.Money(0m);
+			var usd = Iso4217.CurrencySet.USD.Money(0m);
+
+			Assert.AreEqual(rub1, rub2);
+			Assert.AreNotEqual(rub1, usd);
+			Assert.AreNotEqual(rub2, usd);
+			Assert.AreNotEqual(rub1, Money.Zero);
+			Assert.AreNotEqual(usd, Money.Zero);
+		}
+
 		[Test]
 		public void Division()
 		{

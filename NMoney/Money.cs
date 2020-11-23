@@ -176,9 +176,6 @@ namespace NMoney
 		/// </summary>
 		public bool Equals(Money other)
 		{
-			if (Amount == 0m && other.Amount == 0m)
-				return true;
-
 			return Amount == other.Amount &&
 				ReferenceEquals(Currency, other.Currency);
 		}

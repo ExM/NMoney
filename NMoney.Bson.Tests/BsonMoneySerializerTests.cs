@@ -56,12 +56,45 @@ namespace NMoney.Bson.Tests
 		}
 
 		[Test]
+		public void SerializingZeroAmountValueAsDocument(
+			[ValueSource(nameof(AllCurrencies))]
+			ICurrency currency)
+		{
+			var value = currency.Money(0m);
+			var doc = Serialize(value);
+			BsonValue amountValue = null;
+			BsonValue currencyValue = null;
+
+			Assert.Multiple(() =>
+			{
+				Assert.DoesNotThrow(() => amountValue = doc.GetElement(_customAmountFieldName).Value);
+				Assert.DoesNotThrow(() => currencyValue = doc.GetElement(_customCurrencyFieldName).Value);
+			});
+			Assert.Multiple(() =>
+			{
+				Assert.That(amountValue.AsDecimal, Is.Zero);
+				Assert.That(currencyValue.AsString, Is.EqualTo(currency.CharCode));
+			});
+		}
+
+		[Test]
 		public void DontSerializingZeroValueWhenIgnoringDefaultValue()
 		{
 			var value = new StubWithIgnoreIfDefault() { Money = Money.Zero };
 			var doc = Serialize(value);
 			var hasElement = doc.Elements.Any(el => el.Name == _moneyField);
 			Assert.That(hasElement, Is.False);
+		}
+
+		[Test]
+		public void SerializingZeroAmountValueWhenIgnoringDefaultValue(
+			[ValueSource(nameof(AllCurrencies))]
+			ICurrency currency)
+		{
+			var value = new StubWithIgnoreIfDefault() { Money = currency.Money(0m) };
+			var doc = Serialize(value);
+			var hasElement = doc.Elements.Any(el => el.Name == _moneyField);
+			Assert.That(hasElement, Is.True);
 		}
 
 		[Test]

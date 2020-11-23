@@ -53,7 +53,7 @@ namespace NMoney
 		[Test]
 		public void Equal()
 		{
-			Assert.AreEqual(Iso4217.CurrencySet.RUB.Money(0m), Money.Zero);
+			Assert.AreNotEqual(Iso4217.CurrencySet.RUB.Money(0m), Money.Zero);
 			Assert.AreEqual(Money.Zero, Money.Zero);
 		}
 		
@@ -63,8 +63,8 @@ namespace NMoney
 			var m = Iso4217.CurrencySet.EUR.Money(1.23m);
 			Assert.AreEqual(Money.Zero, Money.Zero * 2);
 			Assert.AreEqual(Money.Zero, 2 * Money.Zero);
-			Assert.AreEqual(Money.Zero, m * 0);
-			Assert.AreEqual(Money.Zero, 0 * m);
+			Assert.AreNotEqual(Money.Zero, m * 0);
+			Assert.AreNotEqual(Money.Zero, 0 * m);
 		}
 
 		[Test]
@@ -87,7 +87,7 @@ namespace NMoney
 		{
 			var m = Iso4217.CurrencySet.EUR.Money(1.23m);
 			Assert.AreEqual(Money.Zero, Money.Zero - Money.Zero);
-			Assert.AreEqual(Money.Zero, m - m);
+			Assert.AreNotEqual(Money.Zero, m - m);
 			Assert.AreEqual(m, m - Money.Zero);
 			Assert.AreEqual(-m.Amount, (Money.Zero - m).Amount);
 		}
