@@ -17,8 +17,8 @@ namespace NMoney
 		{
 			CurrencySet<Iso4217.Currency> convSet = _set;
 
-			IReadOnlyCollection<Iso4217.Currency> allCur = convSet.AllCurencies;
-			Iso4217.Currency cur = convSet.TryParse("EUR");
+			var allCur = convSet.AllCurencies;
+			var cur = convSet.TryParse("EUR");
 		}
 		
 		[Test]
@@ -26,8 +26,8 @@ namespace NMoney
 		{
 			ICurrencySet<Iso4217.Currency> convSet = _set;
 
-			IReadOnlyCollection<Iso4217.Currency> allCur = convSet.AllCurencies;
-			Iso4217.Currency cur = convSet.TryParse("EUR");
+			var allCur = convSet.AllCurencies;
+			var cur = convSet.TryParse("EUR");
 		}
 		
 		[Test]
@@ -35,8 +35,8 @@ namespace NMoney
 		{
 			ICurrencySet<ICurrency> convSet = _set;
 			
-			IReadOnlyCollection<ICurrency> allCur = convSet.AllCurencies;
-			ICurrency cur = convSet.TryParse("EUR");
+			var allCur = convSet.AllCurencies;
+			var cur = convSet.TryParse("EUR");
 		}
 		
 		[Test]
@@ -44,8 +44,8 @@ namespace NMoney
 		{
 			ICurrencySet convSet = _set;
 			
-			IReadOnlyCollection<ICurrency> allCur = convSet.AllCurencies;
-			ICurrency cur = convSet.TryParse("EUR");
+			var allCur = convSet.AllCurencies;
+			var cur = convSet.TryParse("EUR");
 		}
 		
 		[Test]
@@ -119,7 +119,7 @@ namespace NMoney
 		[TestCase("XDR", "ru-RU", "Специальные права заимствования")]
 		public void Localization(string code, string culture, string exp)
 		{
-			CultureInfo ci = CultureInfo.GetCultureInfo(culture);
+			var ci = CultureInfo.GetCultureInfo(culture);
 			Thread.CurrentThread.CurrentCulture = ci;
 			Thread.CurrentThread.CurrentUICulture = ci;
 			Assert.AreEqual(exp, _set.Parse(code).ToString());

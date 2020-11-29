@@ -11,7 +11,7 @@ namespace NMoney.Iso4217
 		private static readonly Lazy<CurrencySet> _lazy = new Lazy<CurrencySet>(() => new CurrencySet(), true);
 
 		/// <summary>
-		/// This instance contains all currencies from ISO 4217 
+		/// This instance contains all currencies from ISO 4217
 		/// </summary>
 		public static CurrencySet Instance => _lazy.Value;
 
@@ -35,8 +35,7 @@ namespace NMoney.Iso4217
 		/// </returns>
 		public Currency TryParse(int numCode)
 		{
-			Currency currency;
-			_numMap.TryGetValue(numCode, out currency);
+			_numMap.TryGetValue(numCode, out var currency);
 			return currency;
 		}
 
@@ -55,7 +54,7 @@ namespace NMoney.Iso4217
 
 			throw new NotSupportedException("currency code '" + numCode + "' not supported in ISO4217");
 		}
-		
+
 		/// <summary>
 		/// Return currency from number code
 		/// </summary>

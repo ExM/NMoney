@@ -172,7 +172,7 @@ namespace NMoney
 		[Test]
 		public void Show()
 		{
-			CultureInfo ci = CultureInfo.InvariantCulture;
+			var ci = CultureInfo.InvariantCulture;
 			Thread.CurrentThread.CurrentCulture = ci;
 			Thread.CurrentThread.CurrentUICulture = ci;
 			

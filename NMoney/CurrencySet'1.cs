@@ -8,15 +8,13 @@ namespace NMoney
 	/// </summary>
 	public class CurrencySet<T>: ICurrencySet<T> where T: class, ICurrency
 	{
-		private IReadOnlyCollection<T> _currencies;
-		private Dictionary<string, T> _codeMap;
+		private readonly IReadOnlyCollection<T> _currencies;
+		private readonly Dictionary<string, T> _codeMap;
 
 		/// <inheritdoc />
 		public CurrencySet(IReadOnlyCollection<T> currencies)
 		{
-			if (ReferenceEquals(currencies, null))
-				throw new ArgumentNullException(nameof(currencies));
-			_currencies = currencies;
+			_currencies = currencies ?? throw new ArgumentNullException(nameof(currencies));
 			_codeMap = new Dictionary<string, T>(currencies.Count, StringComparer.OrdinalIgnoreCase);
 			foreach (var c in currencies)
 				_codeMap.Add(c.CharCode, c);
@@ -28,8 +26,7 @@ namespace NMoney
 		/// <inheritdoc />
 		public T TryParse(string charCode)
 		{
-			T currency;
-			_codeMap.TryGetValue(charCode, out currency);
+			_codeMap.TryGetValue(charCode, out var currency);
 			return currency;
 		}
 
@@ -37,8 +34,7 @@ namespace NMoney
 
 		ICurrency ICurrencySet.TryParse(string charCode)
 		{
-			T currency;
-			_codeMap.TryGetValue(charCode, out currency);
+			_codeMap.TryGetValue(charCode, out var currency);
 			return currency;
 		}
 	}

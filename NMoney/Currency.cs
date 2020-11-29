@@ -12,14 +12,11 @@ namespace NMoney
 		/// </summary>
 		public Currency(string charCode, decimal mu, string sym = null)
 		{
-			if(charCode == null)
-				throw new ArgumentNullException(nameof(charCode));
-			
-			CharCode = charCode;
+			CharCode = charCode ?? throw new ArgumentNullException(nameof(charCode));
 			Symbol = sym ?? "¤";
 			MinorUnit = mu;
 		}
-		
+
 		/// <summary>
 		/// Converts this <see cref="Money"/> instance to its equivalent <see cref="string"/> representation.
 		/// </summary>

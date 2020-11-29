@@ -5,18 +5,18 @@ namespace NMoney
 	/// <summary>
 	/// This structure provides a amount of money in some currency
 	/// </summary>
-	public struct Money : IComparable<Money>, IEquatable<Money>
+	public readonly struct Money : IComparable<Money>, IEquatable<Money>
 	{
 		/// <summary>
 		/// amount of money
 		/// </summary>
 		public decimal Amount { get; }
-		
+
 		/// <summary>
 		/// currency
 		/// </summary>
 		public ICurrency Currency { get; }
-		
+
 		/// <summary>
 		/// creates a amount of money in any currency
 		/// </summary>
@@ -29,12 +29,10 @@ namespace NMoney
 		public Money(decimal amount, ICurrency currency)
 			:this()
 		{
-			if (currency == null)
-				throw new ArgumentNullException(nameof(currency));
 			Amount = amount;
-			Currency = currency;
+			Currency = currency ?? throw new ArgumentNullException(nameof(currency));
 		}
-		
+
 		/// <summary>
 		/// show amount and character code of currency
 		/// </summary>
@@ -44,7 +42,7 @@ namespace NMoney
 				return "0";
 			return $"{Amount:G} {Currency.CharCode}";
 		}
-		
+
 		/// <summary>
 		/// contains an integer number of currency units
 		/// </summary>
@@ -54,11 +52,11 @@ namespace NMoney
 			{
 				if (noCurrency || Currency.MinorUnit == 0m)
 					return true;
-				decimal mu = Amount/Currency.MinorUnit;
+				var mu = Amount/Currency.MinorUnit;
 				return decimal.Truncate(mu) == mu;
 			}
 		}
-		
+
 		/// <summary>
 		/// the total number minot of unit of currency
 		/// </summary>
@@ -73,7 +71,7 @@ namespace NMoney
 				return Amount/Currency.MinorUnit;
 			}
 		}
-		
+
 		/// <summary>
 		/// Returns the largest integer less than or equal to minor of unit of this money.
 		/// </summary>
@@ -88,7 +86,7 @@ namespace NMoney
 				return this;
 			return new Money(decimal.Floor(Amount/Currency.MinorUnit)*Currency.MinorUnit, Currency);
 		}
-		
+
 		/// <summary>
 		/// Returns the largest integer less than or equal to this money.
 		/// </summary>
@@ -101,7 +99,7 @@ namespace NMoney
 				return Zero;
 			return new Money(decimal.Floor(Amount), Currency);
 		}
-		
+
 		/// <summary>
 		/// Returns the smallest integral value that is greater than or equal to minor of unit of this money.
 		/// </summary>
@@ -116,7 +114,7 @@ namespace NMoney
 				return this;
 			return new Money(decimal.Ceiling(Amount/Currency.MinorUnit)*Currency.MinorUnit, Currency);
 		}
-		
+
 		/// <summary>
 		/// Returns the smallest integral value that is greater than or equal to this money.
 		/// </summary>
@@ -129,7 +127,7 @@ namespace NMoney
 				return Zero;
 			return new Money(decimal.Ceiling(Amount), Currency);
 		}
-		
+
 		/// <summary>
 		/// mutiply amount
 		/// </summary>
@@ -139,7 +137,7 @@ namespace NMoney
 				return Zero;
 			return new Money(rhs * lhs.Amount, lhs.Currency);
 		}
-		
+
 		/// <summary>
 		/// mutiply amount
 		/// </summary>
@@ -149,7 +147,7 @@ namespace NMoney
 				return Zero;
 			return new Money(lhs * rhs.Amount, rhs.Currency);
 		}
-		
+
 		/// <summary>
 		/// divide amount
 		/// </summary>
