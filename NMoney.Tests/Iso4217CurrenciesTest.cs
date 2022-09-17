@@ -53,32 +53,30 @@ namespace NMoney
 		{
 			foreach (var c in _set.AllCurencies)
 			{
-				Assert.AreEqual(c, _set.Parse(c.CharCode));
-				Assert.AreEqual(c, _set.Parse(c.NumCode));
+				Assert.That(_set.Parse(c.CharCode), Is.EqualTo(c));
+				Assert.That(_set.Parse(c.NumCode), Is.EqualTo(c));
 			}
 		}
 
 		[Test]
 		public void TryParseNumCodeFail()
 		{
-			ICurrency c;
-			Assert.IsFalse(_set.TryParse(12345, out c));
+			Assert.That(_set.TryParse(12345, out _), Is.False);
 		}
 
 		[TestCase(784, "AED")]
 		[TestCase(971, "AFN")]
 		public void TryParseNumCode(int code, string exp)
 		{
-			ICurrency c;
-			Assert.IsTrue(_set.TryParse(code, out c));
-			Assert.AreEqual(exp, c.CharCode);
+			Assert.That(_set.TryParse(code, out var c), Is.True);
+			Assert.That(c!.CharCode, Is.EqualTo(exp));
 		}
 
 		[TestCase(784, "AED")]
 		[TestCase(971, "AFN")]
 		public void ParseNumCode(int code, string exp)
 		{
-			Assert.AreEqual(exp, _set.Parse(code).CharCode);
+			Assert.That(_set.Parse(code).CharCode, Is.EqualTo(exp));
 		}
 
 		[Test]
@@ -95,21 +93,21 @@ namespace NMoney
 		{
 			ICurrency c1 = Iso4217.CurrencySet.RUB;
 			ICurrency c2 = Iso4217.CurrencySet.AED;
-			Assert.AreNotEqual(c1, c2);
-			Assert.IsFalse(c1 == c2);
+			Assert.That(c2, Is.Not.EqualTo(c1));
+			Assert.That(c1 == c2, Is.False);
 
 			ICurrency c3 = Iso4217.CurrencySet.RUB;
-			Assert.AreEqual(c1, c3);
-			Assert.IsTrue(c1 == c3);
+			Assert.That(c3, Is.EqualTo(c1));
+			Assert.That(c1 == c3, Is.True);
 		}
 		
 		[Test]
 		public void ViewUYU()
 		{
-			Assert.AreEqual("UYU", Iso4217.CurrencySet.UYU.CharCode);
-			Assert.AreEqual("$U", Iso4217.CurrencySet.UYU.Symbol);
-			Assert.AreEqual(858, Iso4217.CurrencySet.UYU.NumCode);
-			Assert.AreEqual(0.01m, Iso4217.CurrencySet.UYU.MinorUnit);
+			Assert.That(Iso4217.CurrencySet.UYU.CharCode, Is.EqualTo("UYU"));
+			Assert.That(Iso4217.CurrencySet.UYU.Symbol, Is.EqualTo("$U"));
+			Assert.That(Iso4217.CurrencySet.UYU.NumCode, Is.EqualTo(858));
+			Assert.That(Iso4217.CurrencySet.UYU.MinorUnit, Is.EqualTo(0.01m));
 		}
 
 		[TestCase("USD", "ru-RU", "Доллар США")]
@@ -122,7 +120,7 @@ namespace NMoney
 			var ci = CultureInfo.GetCultureInfo(culture);
 			Thread.CurrentThread.CurrentCulture = ci;
 			Thread.CurrentThread.CurrentUICulture = ci;
-			Assert.AreEqual(exp, _set.Parse(code).ToString());
+			Assert.That(_set.Parse(code).ToString(), Is.EqualTo(exp));
 		}
 	}
 }

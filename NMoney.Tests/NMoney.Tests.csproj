@@ -2,7 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AssemblyName>NMoney.Tests</AssemblyName>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <RootNamespace>NMoney</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\NMoney\NMoney.csproj" />

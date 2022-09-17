@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace NMoney
 {
@@ -69,7 +70,7 @@ namespace NMoney
 		/// <returns>
 		/// true if set contain this currency
 		/// </returns>
-		public static bool TryParse<T>(this ICurrencySet<T> currencySet, string charCode, out T currency) where T : class, ICurrency
+		public static bool TryParse<T>(this ICurrencySet<T> currencySet, string charCode, [NotNullWhen(true)] out T? currency) where T : class, ICurrency
 		{
 			currency = currencySet.TryParse(charCode);
 			return currency != null;

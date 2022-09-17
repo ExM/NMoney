@@ -22,7 +22,7 @@ namespace NMoney
 		[TestCase("JPY", 21.00001)]
 		public void NotRounded(string code, decimal amount)
 		{
-			Assert.IsFalse(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).IsRounded);
+			Assert.That(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).IsRounded, Is.False);
 		}
 
 		[TestCase("USD", 20.95)]
@@ -34,7 +34,7 @@ namespace NMoney
 		[TestCase("XAU", 21.00001)]
 		public void IsRounded(string code, decimal amount)
 		{
-			Assert.IsTrue(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).IsRounded);
+			Assert.That(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).IsRounded, Is.True);
 		}
 		
 		[TestCase("USD", 20.95, 2095)]
@@ -48,7 +48,7 @@ namespace NMoney
 		[TestCase("JPY", 21.00001, 21.00001)]
 		public void TotalMinorUnit(string code, decimal amount, decimal exp)
 		{
-			Assert.AreEqual(exp, Iso4217.CurrencySet.Instance.Parse(code).Money(amount).TotalMinorUnit);
+			Assert.That(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).TotalMinorUnit, Is.EqualTo(exp));
 		}
 		
 		[TestCase("USD", 20.95, 20.95)]
@@ -61,7 +61,7 @@ namespace NMoney
 		[TestCase("XDR", 20.00001, 20.00001)]
 		public void FloorMinorUnit(string code, decimal amount, decimal exp)
 		{
-			Assert.AreEqual(exp, Iso4217.CurrencySet.Instance.Parse(code).Money(amount).FloorMinorUnit().Amount);
+			Assert.That(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).FloorMinorUnit().Amount, Is.EqualTo(exp));
 		}
 		
 		[TestCase("USD", 20.95, 20.95)]
@@ -75,7 +75,7 @@ namespace NMoney
 		[TestCase("BYN", 20.001, 20.01)]
 		public void CeilingMinorUnit(string code, decimal amount, decimal exp)
 		{
-			Assert.AreEqual(exp, Iso4217.CurrencySet.Instance.Parse(code).Money(amount).CeilingMinorUnit().Amount);
+			Assert.That(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).CeilingMinorUnit().Amount, Is.EqualTo(exp));
 		}
 		
 		[TestCase("USD", 20, 20)]
@@ -88,7 +88,7 @@ namespace NMoney
 		[TestCase("BYN", 20.015, 20)]
 		public void FloorMajorUnit(string code, decimal amount, decimal exp)
 		{
-			Assert.AreEqual(exp, Iso4217.CurrencySet.Instance.Parse(code).Money(amount).FloorMajorUnit().Amount);
+			Assert.That(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).FloorMajorUnit().Amount, Is.EqualTo(exp));
 		}
 		
 		[TestCase("USD", 20, 20)]
@@ -100,7 +100,7 @@ namespace NMoney
 		[TestCase("JPY", -20.00001, -20)]
 		public void CeilingMajorUnit(string code, decimal amount, decimal exp)
 		{
-			Assert.AreEqual(exp, Iso4217.CurrencySet.Instance.Parse(code).Money(amount).CeilingMajorUnit().Amount);
+			Assert.That(Iso4217.CurrencySet.Instance.Parse(code).Money(amount).CeilingMajorUnit().Amount, Is.EqualTo(exp));
 		}
 		
 		[Test]
@@ -120,19 +120,19 @@ namespace NMoney
 			var m2 = Iso4217.CurrencySet.RUB.Money(1.24m);
 			var m3 = Iso4217.CurrencySet.USD.Money(1.23m);
 
-			Assert.AreEqual(m1, m1);
-			Assert.AreNotEqual(m2, m1);
-			Assert.AreNotEqual(m1, m3);
+			Assert.That(m1, Is.EqualTo(m1));
+			Assert.That(m1, Is.Not.EqualTo(m2));
+			Assert.That(m3, Is.Not.EqualTo(m1));
 
-			Assert.IsTrue(m1 == m1E);
-			Assert.IsFalse(m1 != m1E);
+			Assert.That(m1 == m1E, Is.True);
+			Assert.That(m1 != m1E, Is.False);
 
-			Assert.IsTrue(m1 != m3);
-			Assert.IsTrue(m2 != m1);
+			Assert.That(m1 != m3, Is.True);
+			Assert.That(m2 != m1, Is.True);
 
-			Assert.IsFalse(m1.Equals((object)m3));
-			Assert.IsFalse(m1.Equals((object)"123"));
-			Assert.IsTrue(m1.Equals((object)m1E));
+			Assert.That(m1.Equals((object)m3), Is.False);
+			Assert.That(m1.Equals((object)"123"), Is.False);
+			Assert.That(m1.Equals((object)m1E), Is.True);
 		}
 
 		[Test]
@@ -142,31 +142,31 @@ namespace NMoney
 			var rub2 = Iso4217.CurrencySet.RUB.Money(0m);
 			var usd = Iso4217.CurrencySet.USD.Money(0m);
 
-			Assert.AreEqual(rub1, rub2);
-			Assert.AreNotEqual(rub1, usd);
-			Assert.AreNotEqual(rub2, usd);
-			Assert.AreNotEqual(rub1, Money.Zero);
-			Assert.AreNotEqual(usd, Money.Zero);
+			Assert.That(rub2, Is.EqualTo(rub1));
+			Assert.That(usd, Is.Not.EqualTo(rub1));
+			Assert.That(usd, Is.Not.EqualTo(rub2));
+			Assert.That(Money.Zero, Is.Not.EqualTo(rub1));
+			Assert.That(Money.Zero, Is.Not.EqualTo(usd));
 		}
 
 		[Test]
 		public void Division()
 		{
-			Assert.AreEqual(Iso4217.CurrencySet.RUB.Money(1.23m), Iso4217.CurrencySet.RUB.Money(2.46m) / 2);
+			Assert.That(Iso4217.CurrencySet.RUB.Money(2.46m) / 2, Is.EqualTo(Iso4217.CurrencySet.RUB.Money(1.23m)));
 		}
 
 		[Test]
 		public void Multiply()
 		{
-			Assert.AreEqual(Iso4217.CurrencySet.RUB.Money(2.46m), Iso4217.CurrencySet.RUB.Money(1.23m) * 2);
-			Assert.AreEqual(Iso4217.CurrencySet.RUB.Money(2.46m), 2 * Iso4217.CurrencySet.RUB.Money(1.23m));
+			Assert.That(Iso4217.CurrencySet.RUB.Money(1.23m) * 2, Is.EqualTo(Iso4217.CurrencySet.RUB.Money(2.46m)));
+			Assert.That(2 * Iso4217.CurrencySet.RUB.Money(1.23m), Is.EqualTo(Iso4217.CurrencySet.RUB.Money(2.46m)));
 		}
 
 		[Test]
 		public void MultiplyWithZero()
 		{
-			Assert.AreEqual(Iso4217.CurrencySet.RUB, (Iso4217.CurrencySet.RUB.Money(1.23m) * 0).Currency);
-			Assert.AreEqual(Iso4217.CurrencySet.RUB, (0 * Iso4217.CurrencySet.RUB.Money(1.23m)).Currency);
+			Assert.That((Iso4217.CurrencySet.RUB.Money(1.23m) * 0).Currency, Is.EqualTo(Iso4217.CurrencySet.RUB));
+			Assert.That((0 * Iso4217.CurrencySet.RUB.Money(1.23m)).Currency, Is.EqualTo(Iso4217.CurrencySet.RUB));
 		}
 		
 		[Test]
@@ -176,8 +176,8 @@ namespace NMoney
 			Thread.CurrentThread.CurrentCulture = ci;
 			Thread.CurrentThread.CurrentUICulture = ci;
 			
-			Assert.AreEqual("1.23 RUB", Iso4217.CurrencySet.RUB.Money(1.23m).ToString());
-			Assert.AreEqual("1.123456789012345678900876523 USD", Iso4217.CurrencySet.USD.Money(1.123456789012345678900876523m).ToString());
+			Assert.That(Iso4217.CurrencySet.RUB.Money(1.23m).ToString(), Is.EqualTo("1.23 RUB"));
+			Assert.That(Iso4217.CurrencySet.USD.Money(1.123456789012345678900876523m).ToString(), Is.EqualTo("1.123456789012345678900876523 USD"));
 		}
 
 		[Test]
@@ -210,19 +210,19 @@ namespace NMoney
 			var r = Iso4217.CurrencySet.RUB.Money(2.23m);
 			var rE = Iso4217.CurrencySet.RUB.Money(2.23m);
 
-			Assert.IsTrue(l < r);
-			Assert.IsTrue(l <= r);
-			Assert.IsTrue(r <= rE);
+			Assert.That(l < r, Is.True);
+			Assert.That(l <= r, Is.True);
+			Assert.That(r <= rE, Is.True);
 
-			Assert.IsFalse(r < l);
-			Assert.IsFalse(r <= l);
+			Assert.That(r < l, Is.False);
+			Assert.That(r <= l, Is.False);
 
-			Assert.IsFalse(l > r);
-			Assert.IsFalse(l >= r);
-			Assert.IsTrue(r >= rE);
+			Assert.That(l > r, Is.False);
+			Assert.That(l >= r, Is.False);
+			Assert.That(r >= rE, Is.True);
 
-			Assert.IsTrue(r > l);
-			Assert.IsTrue(r >= l);
+			Assert.That(r > l, Is.True);
+			Assert.That(r >= l, Is.True);
 		}
 
 		[Test]
@@ -243,7 +243,7 @@ namespace NMoney
 			var m2 = Iso4217.CurrencySet.EUR.Money(2m);
 			var m3 = Iso4217.CurrencySet.EUR.Money(3m);
 
-			Assert.AreEqual(m3, m1 + m2);
+			Assert.That(m1 + m2, Is.EqualTo(m3));
 		}
 
 		[Test]
@@ -264,9 +264,9 @@ namespace NMoney
 			var m2 = Iso4217.CurrencySet.EUR.Money(2m);
 			var m3 = Iso4217.CurrencySet.EUR.Money(-1m);
 
-			Assert.AreEqual(m3, m1 - m2);
+			Assert.That(m1 - m2, Is.EqualTo(m3));
 
-			Assert.AreEqual(Iso4217.CurrencySet.EUR, (m1 - m1).Currency);
+			Assert.That((m1 - m1).Currency, Is.EqualTo(Iso4217.CurrencySet.EUR));
 		}
 
 		[Test]
@@ -277,9 +277,9 @@ namespace NMoney
 			var m2 = Iso4217.CurrencySet.EUR.Money(2m).GetHashCode();
 			var m3 = Iso4217.CurrencySet.EUR.Money(-1m).GetHashCode();
 
-			Assert.AreEqual(m1, m1E);
-			Assert.AreNotEqual(m1, m2);
-			Assert.AreNotEqual(m3, m2);
+			Assert.That(m1E, Is.EqualTo(m1));
+			Assert.That(m2, Is.Not.EqualTo(m1));
+			Assert.That(m2, Is.Not.EqualTo(m3));
 		}
 	}
 }

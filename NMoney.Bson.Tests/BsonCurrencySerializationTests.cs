@@ -16,9 +16,9 @@ namespace NMoney.Bson.Tests
 			var stub = new Stub() { Currency = currency };
 			var bsonDoc = Serialize(stub);
 			var deserialized = Deserialize<Stub>(bsonDoc);
-			Assert.IsNotNull(deserialized);
-			Assert.IsNotNull(deserialized.Currency);
-			Assert.AreEqual(currency, deserialized.Currency);
+			Assert.That(deserialized, Is.Not.Null);
+			Assert.That(deserialized.Currency, Is.Not.Null);
+			Assert.That(deserialized.Currency, Is.EqualTo(currency));
 		}
 
 		[Test]
@@ -31,9 +31,9 @@ namespace NMoney.Bson.Tests
 				{ "currency", currencyCode }
 			};
 			var deserialized = Deserialize<Stub>(bsonDoc);
-			Assert.IsNotNull(deserialized);
-			Assert.IsNotNull(deserialized.Currency);
-			Assert.AreEqual(currencyCode, deserialized.Currency.CharCode);
+			Assert.That(deserialized, Is.Not.Null);
+			Assert.That(deserialized.Currency, Is.Not.Null);
+			Assert.That(deserialized.Currency.CharCode, Is.EqualTo(currencyCode));
 		}
 
 		[Test]
@@ -42,7 +42,7 @@ namespace NMoney.Bson.Tests
 			var stub = new Stub() { Currency = null };
 			var bsonDoc = Serialize(stub);
 			var value = bsonDoc["currency"];
-			Assert.AreEqual(value, BsonNull.Value);
+			Assert.That(BsonNull.Value, Is.EqualTo(value));
 		}
 
 		[Test]
@@ -53,15 +53,16 @@ namespace NMoney.Bson.Tests
 				{ "currency", BsonNull.Value }
 			};
 			var deserialized = Deserialize<Stub>(bsonDoc);
-			Assert.IsNotNull(deserialized);
-			Assert.IsNull(deserialized.Currency);
+			Assert.That(deserialized, Is.Not.Null);
+			Assert.That(deserialized.Currency, Is.Null);
 		}
 
 		[Test]
 		public void Exception_when_serializing_unsupported_currency()
 		{
 			var stub = new Stub() { Currency = NMoney.Iso4217.CurrencySet.GBP };
-			Assert.Throws<NotSupportedException>(() => Serialize(stub));
+			var ex = Assert.Catch<BsonSerializationException>(() => Serialize(stub));
+			Assert.That(ex.InnerException, Is.InstanceOf<NotSupportedException>());
 		}
 
 		[Test]
@@ -72,7 +73,7 @@ namespace NMoney.Bson.Tests
 				{ "currency", NMoney.Iso4217.CurrencySet.GBP.CharCode }
 			};
 			var ex = Assert.Catch<FormatException>(() => Deserialize<Stub>(bsonDoc));
-			Assert.IsInstanceOf<NotSupportedException>(ex.InnerException);
+			Assert.That(ex.InnerException, Is.InstanceOf<NotSupportedException>());
 		}
 
 		private class Stub

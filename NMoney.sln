@@ -3,17 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{83F5FEDC-8CD7-47C9-B580-F52D9BDFC802}"
-	ProjectSection(SolutionItems) = preProject
-		paket.dependencies = paket.dependencies
-		paket.lock = paket.lock
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{6C48742A-D944-4BF1-A4FB-6BBF1ECB7E58}"
-	ProjectSection(SolutionItems) = preProject
-		doc\Finance-Currency-icon.png = doc\Finance-Currency-icon.png
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMoney", "NMoney\NMoney.csproj", "{14013B5A-71FF-4A0D-BD55-1BF3EE1C88B8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMoney.Tests", "NMoney.Tests\NMoney.Tests.csproj", "{B23F2400-311A-482E-9D66-7FB31FE642AD}"
@@ -21,6 +10,16 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMoney.Bson", "NMoney.Bson\NMoney.Bson.csproj", "{AEEE0181-F0B1-45E7-B077-6885B567CFA0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NMoney.Bson.Tests", "NMoney.Bson.Tests\NMoney.Bson.Tests.csproj", "{8E98D323-3582-460D-899B-55623264B463}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{D4FD1FA5-7A6B-49DB-ACEB-9E806FD066E5}"
+	ProjectSection(SolutionItems) = preProject
+		doc\Finance-Currency-icon.png = doc\Finance-Currency-icon.png
+		paket.lock = paket.lock
+		paket.dependencies = paket.dependencies
+		.config\dotnet-tools.json = .config\dotnet-tools.json
+		README.md = README.md
+		LICENSE = LICENSE
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

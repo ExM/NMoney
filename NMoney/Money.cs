@@ -161,12 +161,12 @@ namespace NMoney
 		/// <summary>
 		/// Determines whether the specified System.Object is equal to the current Money.
 		/// </summary>
-		public override bool Equals(object obj)
+		public override bool Equals(object? obj)
 		{
-			if (!(obj is Money))
-				return false;
-
-			return Equals((Money)obj);
+			if (obj is Money money)
+				return Equals(money);
+			
+			return false;
 		}
 
 		/// <summary>
@@ -246,7 +246,7 @@ namespace NMoney
 		}
 
 		/// <summary>
-		/// operator Greate or Equal
+		/// operator Great or Equal
 		/// </summary>
 		public static bool operator >=(Money lhs, Money rhs)
 		{

@@ -10,7 +10,7 @@ namespace NMoney
 		/// <summary>
 		/// Base class that represents a currency
 		/// </summary>
-		public Currency(string charCode, decimal mu, string sym = null)
+		public Currency(string charCode, decimal mu, string? sym = null)
 		{
 			CharCode = charCode ?? throw new ArgumentNullException(nameof(charCode));
 			Symbol = sym ?? "¤";
@@ -26,7 +26,7 @@ namespace NMoney
 		}
 
 		/// <inheritdoc />
-		public virtual string ToString(string format, IFormatProvider formatProvider)
+		public virtual string ToString(string? format, IFormatProvider? formatProvider)
 		{
 			return ToString();
 		}

@@ -33,7 +33,7 @@ namespace NMoney.Iso4217
 		}
 
 		/// <inheritdoc />
-		public override string ToString(string format, IFormatProvider formatProvider)
+		public override string ToString(string? format, IFormatProvider? formatProvider)
 		{
 			switch (format)
 			{
@@ -58,9 +58,9 @@ namespace NMoney.Iso4217
 		/// <summary>
 		/// Get localized name of currency
 		/// </summary>
-		protected virtual string GetLocalizedName(CultureInfo cultureInfo)
+		protected virtual string GetLocalizedName(CultureInfo? cultureInfo)
 		{
-			return _rMan.GetString(CharCode, cultureInfo);
+			return _rMan.GetString(CharCode, cultureInfo) ?? CharCode;
 		}
 	}
 }

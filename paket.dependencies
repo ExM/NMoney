@@ -1,11 +1,11 @@
-version 5.174.2
+version 8.0.3
 framework: auto-detect
 storage: none
 
 source https://www.nuget.org/api/v2/
-nuget NUnit ~> 3.10
-nuget NUnit3TestAdapter ~> 3.10
-nuget Microsoft.NET.Test.Sdk ~> 15.5
+nuget NUnit ~> 4.0
+nuget NUnit3TestAdapter ~> 4.5
+nuget Microsoft.NET.Test.Sdk ~> 17.8
 nuget MongoDB.Bson ~> 2
 nuget MongoDB.Driver.Core ~> 2
 nuget MongoDB.Driver ~> 2

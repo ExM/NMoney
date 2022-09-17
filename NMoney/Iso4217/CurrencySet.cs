@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace NMoney.Iso4217
 {
@@ -33,7 +34,7 @@ namespace NMoney.Iso4217
 		/// <returns>
 		/// null if not found<see cref="ICurrency"/>
 		/// </returns>
-		public Currency TryParse(int numCode)
+		public Currency? TryParse(int numCode)
 		{
 			_numMap.TryGetValue(numCode, out var currency);
 			return currency;
@@ -67,7 +68,7 @@ namespace NMoney.Iso4217
 		/// <returns>
 		/// true if ISO 4217 contain this currency
 		/// </returns>
-		public bool TryParse(int numCode, out ICurrency currency)
+		public bool TryParse(int numCode, [NotNullWhen(true)] out ICurrency? currency)
 		{
 			currency = TryParse(numCode);
 			return currency != null;

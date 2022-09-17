@@ -16,9 +16,9 @@ namespace NMoney.Iso4217
 		{
 		}
 
-		protected override string GetLocalizedName(CultureInfo cultureInfo)
+		protected override string GetLocalizedName(CultureInfo? cultureInfo)
 		{
-			return _rMan.GetString(CharCode, cultureInfo);
+			return _rMan.GetString(CharCode, cultureInfo) ?? CharCode;
 		}
 	}
 }

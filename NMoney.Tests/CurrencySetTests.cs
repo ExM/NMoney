@@ -15,11 +15,11 @@ namespace NMoney
 		{
 			ICurrencySet set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			Assert.AreEqual(3, set.AllCurencies.Count);
+			Assert.That(set.AllCurencies.Count, Is.EqualTo(3));
 
-			Assert.IsTrue(set.Contain(_xa));
-			Assert.IsTrue(set.Contain(_xb));
-			Assert.IsTrue(set.Contain(_xc));
+			Assert.That(set.Contain(_xa), Is.True);
+			Assert.That(set.Contain(_xb), Is.True);
+			Assert.That(set.Contain(_xc), Is.True);
 		}
 
 		[Test]
@@ -33,12 +33,12 @@ namespace NMoney
 		[Test]
 		public void Equals()
 		{
-			Assert.AreNotEqual(_xa, _xb);
-			Assert.IsFalse(_xa == _xb);
+			Assert.That(_xb, Is.Not.EqualTo(_xa));
+			Assert.That(_xa == _xb, Is.False);
 
 			ICurrency c3 = _xa;
-			Assert.AreEqual(_xa, c3);
-			Assert.IsTrue(_xa == c3);
+			Assert.That(c3, Is.EqualTo(_xa));
+			Assert.That(_xa == c3, Is.True);
 		}
 
 		[Test]
@@ -46,7 +46,7 @@ namespace NMoney
 		{
 			var set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			Assert.IsFalse(set.Contain(new FakeCurrency()));
+			Assert.That(set.Contain(new FakeCurrency()), Is.False);
 		}
 
 		private class FakeCurrency : ICurrency
@@ -84,8 +84,7 @@ namespace NMoney
 		{
 			var set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			ICurrency c;
-			Assert.IsFalse(set.TryParse("???", out c));
+			Assert.That(set.TryParse("???", out _), Is.False);
 		}
 
 		[Test]
@@ -93,7 +92,7 @@ namespace NMoney
 		{
 			var set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			Assert.IsFalse(set.Contain("???"));
+			Assert.That(set.Contain("???"), Is.False);
 		}
 
 		[Test]
@@ -101,7 +100,7 @@ namespace NMoney
 		{
 			var set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			Assert.IsTrue(set.Contain(_xa.CharCode));
+			Assert.That(set.Contain(_xa.CharCode), Is.True);
 		}
 
 		[Test]
@@ -109,7 +108,7 @@ namespace NMoney
 		{
 			var set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			Assert.AreEqual("XA", set.Parse("XA").CharCode);
+			Assert.That(set.Parse("XA").CharCode, Is.EqualTo("XA"));
 		}
 
 		[Test]
@@ -128,9 +127,8 @@ namespace NMoney
 		{
 			var set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			ICurrency c;
-			Assert.IsTrue(set.TryParse("XA", out c));
-			Assert.AreEqual("XA", c.CharCode);
+			Assert.That(set.TryParse("XA", out var c), Is.True);
+			Assert.That(c!.CharCode, Is.EqualTo("XA"));
 		}
 	}
 }

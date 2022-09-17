@@ -16,7 +16,7 @@ namespace NMoney
 		/// <returns>
 		/// null if not found
 		/// </returns>
-		new T TryParse(string charCode);
+		new T? TryParse(string charCode);
 
 		/// <summary>
 		/// All contained curencies

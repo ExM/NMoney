@@ -11,7 +11,9 @@ namespace NMoney
 		private readonly IReadOnlyCollection<T> _currencies;
 		private readonly Dictionary<string, T> _codeMap;
 
-		/// <inheritdoc />
+		/// <summary>
+		/// Supported currency collection in your application or any serializer
+		/// </summary>
 		public CurrencySet(IReadOnlyCollection<T> currencies)
 		{
 			_currencies = currencies ?? throw new ArgumentNullException(nameof(currencies));
@@ -24,7 +26,7 @@ namespace NMoney
 		public IReadOnlyCollection<T> AllCurencies => _currencies;
 
 		/// <inheritdoc />
-		public T TryParse(string charCode)
+		public T? TryParse(string charCode)
 		{
 			_codeMap.TryGetValue(charCode, out var currency);
 			return currency;
@@ -32,7 +34,7 @@ namespace NMoney
 
 		IReadOnlyCollection<ICurrency> ICurrencySet.AllCurencies => _currencies;
 
-		ICurrency ICurrencySet.TryParse(string charCode)
+		ICurrency? ICurrencySet.TryParse(string charCode)
 		{
 			_codeMap.TryGetValue(charCode, out var currency);
 			return currency;
