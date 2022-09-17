@@ -654,4 +654,10 @@
   <data name="ZWL" xml:space="preserve">
     <value>Доллар Зимбабве</value>
   </data>
+  <data name="VED" xml:space="preserve">
+    <value>Боливар Соберано</value>
+  </data>
+  <data name="SLE" xml:space="preserve">
+    <value>Леоне</value>
+  </data>
 </root>

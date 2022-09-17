@@ -524,6 +524,10 @@ namespace NMoney.Iso4217
 		/// <summary>
 		/// Leone
 		/// </summary>
+		public static Currency SLE => SLECache.Instance;
+		/// <summary>
+		/// Leone
+		/// </summary>
 		public static Currency SLL => SLLCache.Instance;
 		/// <summary>
 		/// Somali Shilling
@@ -621,6 +625,10 @@ namespace NMoney.Iso4217
 		/// Uzbekistan Sum
 		/// </summary>
 		public static Currency UZS => UZSCache.Instance;
+		/// <summary>
+		/// Bolívar Soberano
+		/// </summary>
+		public static Currency VED => VEDCache.Instance;
 		/// <summary>
 		/// Bolívar Soberano
 		/// </summary>
@@ -781,6 +789,7 @@ namespace NMoney.Iso4217
 				EGP,
 				SVC,
 				ERN,
+				SZL,
 				ETB,
 				FKP,
 				FJD,
@@ -858,6 +867,7 @@ namespace NMoney.Iso4217
 				RSD,
 				SCR,
 				SLL,
+				SLE,
 				SGD,
 				XSU,
 				SBD,
@@ -866,7 +876,6 @@ namespace NMoney.Iso4217
 				LKR,
 				SDG,
 				SRD,
-				SZL,
 				SEK,
 				CHE,
 				CHW,
@@ -890,6 +899,7 @@ namespace NMoney.Iso4217
 				UZS,
 				VUV,
 				VES,
+				VED,
 				VND,
 				YER,
 				ZMW,
@@ -1553,6 +1563,11 @@ namespace NMoney.Iso4217
 			internal static readonly Currency Instance = new Currency("SHP", "£", 654, 0.01m);
 		}
 
+		private static class SLECache
+		{
+			internal static readonly Currency Instance = new Currency("SLE", "¤", 925, 0.01m);
+		}
+
 		private static class SLLCache
 		{
 			internal static readonly Currency Instance = new Currency("SLL", "Le", 694, 0.01m);
@@ -1676,6 +1691,11 @@ namespace NMoney.Iso4217
 		private static class UZSCache
 		{
 			internal static readonly Currency Instance = new Currency("UZS", "сўм", 860, 0.01m);
+		}
+
+		private static class VEDCache
+		{
+			internal static readonly Currency Instance = new Currency("VED", "¤", 926, 0.01m);
 		}
 
 		private static class VESCache

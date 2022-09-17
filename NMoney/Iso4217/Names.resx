@@ -445,6 +445,9 @@
   <data name="SHP" xml:space="preserve">
     <value>Saint Helena Pound</value>
   </data>
+  <data name="SLE" xml:space="preserve">
+    <value>Leone</value>
+  </data>
   <data name="SLL" xml:space="preserve">
     <value>Leone</value>
   </data>
@@ -519,6 +522,9 @@
   </data>
   <data name="UZS" xml:space="preserve">
     <value>Uzbekistan Sum</value>
+  </data>
+  <data name="VED" xml:space="preserve">
+    <value>Bolívar Soberano</value>
   </data>
   <data name="VES" xml:space="preserve">
     <value>Bolívar Soberano</value>
