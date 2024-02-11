@@ -241,9 +241,6 @@
   <data name="HNL" xml:space="preserve">
     <value>Lempira</value>
   </data>
-  <data name="HRK" xml:space="preserve">
-    <value>Kuna</value>
-  </data>
   <data name="HTG" xml:space="preserve">
     <value>Gourde</value>
   </data>
@@ -445,7 +442,7 @@
   <data name="SHP" xml:space="preserve">
     <value>Saint Helena Pound</value>
   </data>
-  <data name="SLL" xml:space="preserve">
+  <data name="SLE" xml:space="preserve">
     <value>Leone</value>
   </data>
   <data name="SOS" xml:space="preserve">
@@ -519,6 +516,9 @@
   </data>
   <data name="UZS" xml:space="preserve">
     <value>Uzbekistan Sum</value>
+  </data>
+  <data name="VED" xml:space="preserve">
+    <value>Bolívar Soberano</value>
   </data>
   <data name="VES" xml:space="preserve">
     <value>Bolívar Soberano</value>

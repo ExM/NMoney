@@ -248,10 +248,6 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency HNL => HNLCache.Instance;
 		/// <summary>
-		/// Kuna
-		/// </summary>
-		public static Currency HRK => HRKCache.Instance;
-		/// <summary>
 		/// Gourde
 		/// </summary>
 		public static Currency HTG => HTGCache.Instance;
@@ -522,7 +518,7 @@ namespace NMoney.Iso4217
 		/// <summary>
 		/// Leone
 		/// </summary>
-		public static Currency SLL => SLLCache.Instance;
+		public static Currency SLE => SLECache.Instance;
 		/// <summary>
 		/// Somali Shilling
 		/// </summary>
@@ -619,6 +615,10 @@ namespace NMoney.Iso4217
 		/// Uzbekistan Sum
 		/// </summary>
 		public static Currency UZS => UZSCache.Instance;
+		/// <summary>
+		/// Bolívar Soberano
+		/// </summary>
+		public static Currency VED => VEDCache.Instance;
 		/// <summary>
 		/// Bolívar Soberano
 		/// </summary>
@@ -784,7 +784,6 @@ namespace NMoney.Iso4217
 				GYD,
 				HKD,
 				HNL,
-				HRK,
 				HTG,
 				HUF,
 				IDR,
@@ -852,7 +851,7 @@ namespace NMoney.Iso4217
 				SEK,
 				SGD,
 				SHP,
-				SLL,
+				SLE,
 				SOS,
 				SRD,
 				SSP,
@@ -877,6 +876,7 @@ namespace NMoney.Iso4217
 				UYU,
 				UYW,
 				UZS,
+				VED,
 				VES,
 				VND,
 				VUV,
@@ -1209,11 +1209,6 @@ namespace NMoney.Iso4217
 		private static class HNLCache
 		{
 			internal static readonly Currency Instance = new Currency("HNL", "L", 340, 0.01m);
-		}
-
-		private static class HRKCache
-		{
-			internal static readonly Currency Instance = new Currency("HRK", "kn", 191, 0.01m);
 		}
 
 		private static class HTGCache
@@ -1551,9 +1546,9 @@ namespace NMoney.Iso4217
 			internal static readonly Currency Instance = new Currency("SHP", "£", 654, 0.01m);
 		}
 
-		private static class SLLCache
+		private static class SLECache
 		{
-			internal static readonly Currency Instance = new Currency("SLL", "Le", 694, 0.01m);
+			internal static readonly Currency Instance = new Currency("SLE", "¤", 925, 0.01m);
 		}
 
 		private static class SOSCache
@@ -1674,6 +1669,11 @@ namespace NMoney.Iso4217
 		private static class UZSCache
 		{
 			internal static readonly Currency Instance = new Currency("UZS", "сўм", 860, 0.01m);
+		}
+
+		private static class VEDCache
+		{
+			internal static readonly Currency Instance = new Currency("VED", "¤", 926, 0.01m);
 		}
 
 		private static class VESCache

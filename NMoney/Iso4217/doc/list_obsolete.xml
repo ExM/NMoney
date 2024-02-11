@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ISO_4217 Pblshd="2016-07-01">
+<ISO_4217>
 	<CcyTbl>
 		<CcyNtry>
 			<CtryNm>MAURITANIA</CtryNm>
@@ -27,6 +27,20 @@
 			<CcyNm>Bolívar</CcyNm>
 			<Ccy>VEF</Ccy>
 			<CcyNbr>937</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
+		<CcyNtry>
+			<CtryNm>SIERRA LEONE</CtryNm>
+			<CcyNm>Leone</CcyNm>
+			<Ccy>SLL</Ccy>
+			<CcyNbr>694</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
+		<CcyNtry>
+			<CtryNm>CROATIA</CtryNm>
+			<CcyNm>Kuna</CcyNm>
+			<Ccy>HRK</Ccy>
+			<CcyNbr>191</CcyNbr>
 			<CcyMnrUnts>2</CcyMnrUnts>
 		</CcyNtry>
 	</CcyTbl>

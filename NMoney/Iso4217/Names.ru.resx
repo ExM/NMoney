@@ -300,9 +300,6 @@
   <data name="HNL" xml:space="preserve">
     <value>Лемпира</value>
   </data>
-  <data name="HRK" xml:space="preserve">
-    <value>Куна</value>
-  </data>
   <data name="HTG" xml:space="preserve">
     <value>Гурд</value>
   </data>
@@ -504,9 +501,6 @@
   <data name="SHP" xml:space="preserve">
     <value>Фунт Острова Святой Елены</value>
   </data>
-  <data name="SLL" xml:space="preserve">
-    <value>Леоне</value>
-  </data>
   <data name="SOS" xml:space="preserve">
     <value>Сомалийский шиллинг</value>
   </data>
@@ -653,5 +647,11 @@
   </data>
   <data name="ZWL" xml:space="preserve">
     <value>Доллар Зимбабве</value>
+  </data>
+  <data name="SLE" xml:space="preserve">
+    <value>Леоне</value>
+  </data>
+  <data name="VED" xml:space="preserve">
+    <value>Боливар Соберано</value>
   </data>
 </root>

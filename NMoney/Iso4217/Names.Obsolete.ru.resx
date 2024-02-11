@@ -129,4 +129,10 @@
   <data name="VEF" xml:space="preserve">
     <value>Боливар</value>
   </data>
+  <data name="HRK" xml:space="preserve">
+    <value>Куна</value>
+  </data>
+  <data name="SLL" xml:space="preserve">
+    <value>Леоне</value>
+  </data>
 </root>
