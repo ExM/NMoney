@@ -19,7 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{D4FD1F
 		.config\dotnet-tools.json = .config\dotnet-tools.json
 		README.md = README.md
 		LICENSE = LICENSE
+		global.json = global.json
+		DEVELOP.md = DEVELOP.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCodeRenderer", "SourceCodeRenderer\SourceCodeRenderer.csproj", "{96DE9D98-39E6-4386-AAEF-1E2C13E3F222}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +47,10 @@ Global
 		{8E98D323-3582-460D-899B-55623264B463}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E98D323-3582-460D-899B-55623264B463}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E98D323-3582-460D-899B-55623264B463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96DE9D98-39E6-4386-AAEF-1E2C13E3F222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96DE9D98-39E6-4386-AAEF-1E2C13E3F222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96DE9D98-39E6-4386-AAEF-1E2C13E3F222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96DE9D98-39E6-4386-AAEF-1E2C13E3F222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,8 +2,6 @@ using System;
 using NUnit.Framework;
 using System.Threading;
 using System.Globalization;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace NMoney
 {

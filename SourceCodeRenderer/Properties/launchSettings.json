@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "render without updates": {
+      "commandName": "Project",
+      "commandLineArgs": "-i=../../NMoney/Iso4217/doc -o=../../NMoney/Iso4217"
+    },
+    "update and render": {
+      "commandName": "Project",
+      "commandLineArgs": "-u -i=../../NMoney/Iso4217/doc -o=../../NMoney/Iso4217"
+    }
+  }
+}

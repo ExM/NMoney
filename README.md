@@ -11,7 +11,6 @@ An instance of this interface must contain:
 # ICurrencySet
 Customizable currency collection
 
-[![Build status](https://ci.appveyor.com/api/projects/status/g04osa979boyu8bk?svg=true)](https://ci.appveyor.com/project/ExM/nmoney)
 [![NuGet Version](http://img.shields.io/nuget/v/NMoney.svg?style=flat)](https://www.nuget.org/packages/NMoney/) 
 [![NuGet Downloads](http://img.shields.io/nuget/dt/NMoney.svg?style=flat)](https://www.nuget.org/packages/NMoney/)
 
@@ -39,7 +38,7 @@ var usd25 = usd10 + usd15;
 var eur122 = eur123 - eur1;
 var wtf = usd10 + eur1; // will throw exception
 
-var usd10_ = Money.Zero + usd10;
+var usd10 = Money.Zero + usd10;
 var usdSum = default(Money); // Money.Zero - default value of this struct
 usdSum += usd10;
 usdSum += usd15; // now usdSum contain 25 dollars

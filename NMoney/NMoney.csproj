@@ -1,64 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <AssemblyTitle>NMoney</AssemblyTitle>
-    <AssemblyName>NMoney</AssemblyName>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
-    <FileVersion>3.1.0.0</FileVersion>
-    <Company>ExM</Company>
-    <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
-    <Version>3.1.0</Version>
-    <SignAssembly>true</SignAssembly>
-    <DelaySign>false</DelaySign>
-    <AssemblyOriginatorKeyFile>NMoney.snk</AssemblyOriginatorKeyFile>
-    <LangVersion>8</LangVersion>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Update="Iso4217\CurrencySet.ObsoleteList.tt">
-      <LastGenOutput>CurrencySet.ObsoleteList.cs</LastGenOutput>
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
-    <None Update="Iso4217\CurrencySet.List.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CurrencySet.List.cs</LastGenOutput>
-    </None>
-    <None Update="Iso4217\Names.Obsolete.tt">
-      <LastGenOutput>Names.Obsolete.resx</LastGenOutput>
-      <Generator>TextTemplatingFileGenerator</Generator>
-    </None>
-    <None Update="Iso4217\Names.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Names.resx</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Iso4217\CurrencySet.List.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CurrencySet.List.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Iso4217\CurrencySet.ObsoleteList.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CurrencySet.ObsoleteList.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="Iso4217\Names.Obsolete.resx">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Names.Obsolete.tt</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Iso4217\Names.resx">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Names.tt</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
+    <PropertyGroup>
+        <AssemblyTitle>NMoney</AssemblyTitle>
+        <AssemblyName>NMoney</AssemblyName>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <FileVersion>3.1.0.0</FileVersion>
+        <Company>ExM</Company>
+        <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
+        <Version>3.1.0</Version>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <Import Project="..\.paket\Paket.Restore.targets"/>
 </Project>

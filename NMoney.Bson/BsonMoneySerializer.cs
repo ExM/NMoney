@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using MongoDB.Bson;
 using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization;
@@ -36,7 +37,7 @@ namespace NMoney.Bson
 			string currencyFieldName = DefaultCurrencyFieldName,
 			string amountFieldName = DefaultAmountFieldName,
 			BsonType amountRepresentation = DefaultAmountRepresentation,
-			IBsonSerializerRegistry registry = null)
+			IBsonSerializerRegistry? registry = null)
 		{
 			_currencyFieldName = currencyFieldName;
 			_amountFieldName = amountFieldName;
@@ -57,7 +58,7 @@ namespace NMoney.Bson
 			WithRepresentation(representation);
 
 		/// <inheritdoc/>
-		public bool TryGetMemberSerializationInfo(string memberName, out BsonSerializationInfo serializationInfo)
+		public bool TryGetMemberSerializationInfo(string memberName, [NotNullWhen(true)] out BsonSerializationInfo? serializationInfo)
 		{
 			switch (memberName)
 			{
@@ -113,7 +114,7 @@ namespace NMoney.Bson
 			reader.ReadStartDocument();
 
 			decimal? amount = null;
-			ICurrency currency = null;
+			ICurrency? currency = null;
 			while (reader.ReadBsonType() != BsonType.EndOfDocument)
 			{
 				var name = reader.ReadName();

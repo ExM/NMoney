@@ -8,7 +8,7 @@ namespace NMoney.Bson
 	/// <summary>
 	/// Bson serializer for <see cref="ICurrency"/> by <see cref="ICurrencySet"/>
 	/// </summary>
-	public class BsonCurrencySerializer : SerializerBase<ICurrency>
+	public class BsonCurrencySerializer : SerializerBase<ICurrency?>
 	{
 		private static readonly object _sync = new object();
 		private readonly ICurrencySet _currencySet;
@@ -47,7 +47,7 @@ namespace NMoney.Bson
 				IsRegistered = true;
 			}
 
-			Register(currencySet, BsonSerializer.SerializerRegistry as BsonSerializerRegistry);
+			Register(currencySet, (BsonSerializerRegistry)BsonSerializer.SerializerRegistry);
 		}
 
 		/// <summary>
@@ -62,7 +62,7 @@ namespace NMoney.Bson
 		}
 
 		/// <inheritdoc/>
-		public override ICurrency Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
+		public override ICurrency? Deserialize(BsonDeserializationContext context, BsonDeserializationArgs args)
 		{
 			var bsonReader = context.Reader;
 			var bsonType = context.Reader.GetCurrentBsonType();
@@ -84,7 +84,7 @@ namespace NMoney.Bson
 		}
 
 		/// <inheritdoc/>
-		public override void Serialize(BsonSerializationContext context, BsonSerializationArgs args, ICurrency value)
+		public override void Serialize(BsonSerializationContext context, BsonSerializationArgs args, ICurrency? value)
 		{
 			if (value is null)
 			{

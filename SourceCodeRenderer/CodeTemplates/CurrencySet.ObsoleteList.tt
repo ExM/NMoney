@@ -1,0 +1,25 @@
+﻿<#@ template language="C#" inherits="NMoney.SourceCodeRenderer.RenderContext"#>
+using System;
+
+namespace NMoney.Iso4217
+{
+	public partial class CurrencySet
+	{
+<#		foreach(var entry in ObsoleteCurrencies) {
+#>		/// <summary>
+		/// <#= entry.Name #>
+		/// </summary>
+		[Obsolete]
+		public static Currency <#= entry.Code #> => <#= entry.Code #>Cache.Instance;
+<# } #>
+
+		<#		foreach(var entry in ObsoleteCurrencies) {
+#>
+
+		private static class <#= entry.Code #>Cache
+		{
+			internal static readonly Currency Instance = new ObsoleteCurrency("<#= entry.Code #>", "<#= CurrencySymbols.Get(entry.Code) #>", <#= entry.NumCode #>, <#= entry.MinorUnit #>);
+		}
+<# } #>
+	}
+}
