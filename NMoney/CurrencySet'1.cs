@@ -23,7 +23,7 @@ namespace NMoney
 		}
 
 		/// <inheritdoc />
-		public IReadOnlyCollection<T> AllCurencies => _currencies;
+		public IReadOnlyCollection<T> AllCurrencies => _currencies;
 
 		/// <inheritdoc />
 		public T? TryParse(string charCode)
@@ -32,7 +32,7 @@ namespace NMoney
 			return currency;
 		}
 
-		IReadOnlyCollection<ICurrency> ICurrencySet.AllCurencies => _currencies;
+		IReadOnlyCollection<ICurrency> ICurrencySet.AllCurrencies => _currencies;
 
 		ICurrency? ICurrencySet.TryParse(string charCode)
 		{

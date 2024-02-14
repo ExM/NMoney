@@ -17,7 +17,7 @@ namespace NMoney
 		{
 			CurrencySet<Iso4217.Currency> convSet = _set;
 
-			var allCur = convSet.AllCurencies;
+			var allCur = convSet.AllCurrencies;
 			var cur = convSet.TryParse("EUR");
 		}
 		
@@ -26,7 +26,7 @@ namespace NMoney
 		{
 			ICurrencySet<Iso4217.Currency> convSet = _set;
 
-			var allCur = convSet.AllCurencies;
+			var allCur = convSet.AllCurrencies;
 			var cur = convSet.TryParse("EUR");
 		}
 		
@@ -35,7 +35,7 @@ namespace NMoney
 		{
 			ICurrencySet<ICurrency> convSet = _set;
 			
-			var allCur = convSet.AllCurencies;
+			var allCur = convSet.AllCurrencies;
 			var cur = convSet.TryParse("EUR");
 		}
 		
@@ -44,14 +44,14 @@ namespace NMoney
 		{
 			ICurrencySet convSet = _set;
 			
-			var allCur = convSet.AllCurencies;
+			var allCur = convSet.AllCurrencies;
 			var cur = convSet.TryParse("EUR");
 		}
 		
 		[Test]
-		public void AllCurrensiesFromIso4217()
+		public void AllCurrenciesFromIso4217()
 		{
-			foreach (var c in _set.AllCurencies)
+			foreach (var c in _set.AllCurrencies)
 			{
 				Assert.That(_set.Parse(c.CharCode), Is.EqualTo(c));
 				Assert.That(_set.Parse(c.NumCode), Is.EqualTo(c));

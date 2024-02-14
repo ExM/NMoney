@@ -20,8 +20,8 @@ namespace NMoney.Iso4217
 
 		private CurrencySet() : base(GetAll())
 		{
-			_numMap = new Dictionary<int, Iso4217.Currency>(AllCurencies.Count);
-			foreach (var c in AllCurencies)
+			_numMap = new Dictionary<int, Iso4217.Currency>(AllCurrencies.Count);
+			foreach (var c in AllCurrencies)
 				_numMap.Add(c.NumCode, c);
 		}
 

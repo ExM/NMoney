@@ -19,8 +19,8 @@ namespace NMoney
 		new T? TryParse(string charCode);
 
 		/// <summary>
-		/// All contained curencies
+		/// All contained currencies
 		/// </summary>
-		new IReadOnlyCollection<T> AllCurencies { get; }
+		new IReadOnlyCollection<T> AllCurrencies { get; }
 	}
 }

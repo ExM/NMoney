@@ -19,7 +19,7 @@ namespace NMoney.Bson.Tests
 				new Currency("BTC", 0.01m, "₿"),
 			});
 
-		public static IEnumerable<ICurrency> AllCurrencies => _currencySet.AllCurencies;
+		public static IEnumerable<ICurrency> AllCurrencies => _currencySet.AllCurrencies;
 
 		public static IEnumerable<string> AllCurrencyCodes => AllCurrencies.Select(c => c.CharCode);
 

@@ -19,8 +19,8 @@ namespace NMoney
 		ICurrency? TryParse(string charCode);
 
 		/// <summary>
-		/// All contained curencies
+		/// All contained currencies
 		/// </summary>
-		IReadOnlyCollection<ICurrency> AllCurencies { get; }
+		IReadOnlyCollection<ICurrency> AllCurrencies { get; }
 	}
 }

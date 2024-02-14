@@ -15,7 +15,7 @@ namespace NMoney
 		{
 			ICurrencySet set = new CurrencySet(new[] { _xa, _xb, _xc });
 
-			Assert.That(set.AllCurencies.Count, Is.EqualTo(3));
+			Assert.That(set.AllCurrencies.Count, Is.EqualTo(3));
 
 			Assert.That(set.Contain(_xa), Is.True);
 			Assert.That(set.Contain(_xb), Is.True);
