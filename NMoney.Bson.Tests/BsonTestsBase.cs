@@ -5,7 +5,7 @@ using MongoDB.Bson.IO;
 using MongoDB.Bson.Serialization;
 using NUnit.Framework;
 
-namespace NMoney.Bson.Tests
+namespace NMoney.Bson
 {
 	public abstract class BsonTestsBase
 	{

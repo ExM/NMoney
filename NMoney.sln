@@ -14,13 +14,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{D4FD1FA5-7A6B-49DB-ACEB-9E806FD066E5}"
 	ProjectSection(SolutionItems) = preProject
 		doc\Finance-Currency-icon.png = doc\Finance-Currency-icon.png
-		paket.lock = paket.lock
-		paket.dependencies = paket.dependencies
-		.config\dotnet-tools.json = .config\dotnet-tools.json
 		README.md = README.md
 		LICENSE = LICENSE
 		global.json = global.json
 		DEVELOP.md = DEVELOP.md
+		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceCodeRenderer", "SourceCodeRenderer\SourceCodeRenderer.csproj", "{96DE9D98-39E6-4386-AAEF-1E2C13E3F222}"

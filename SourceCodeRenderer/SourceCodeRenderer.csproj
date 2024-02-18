@@ -2,14 +2,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>NMoney.SourceCodeRenderer</AssemblyName>
     <RootNamespace>NMoney.SourceCodeRenderer</RootNamespace>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin</OutputPath>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mono.TextTemplating" />
+    <PackageReference Include="Microsoft.CodeAnalysis" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" />
+  </ItemGroup>
   
   <ItemGroup>
     <EmbeddedResource Include="CodeTemplates\CurrencySet.List.tt">
@@ -26,5 +34,4 @@
     </EmbeddedResource>
   </ItemGroup>
   
-  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

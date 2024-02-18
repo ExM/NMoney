@@ -3,7 +3,7 @@
     <PropertyGroup>
         <AssemblyTitle>NMoney.Bson</AssemblyTitle>
         <AssemblyName>NMoney.Bson</AssemblyName>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
         <FileVersion>4.0.0.0</FileVersion>
@@ -11,10 +11,34 @@
         <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;, Pavel Laptov&lt;pavel.laptov@ya.ru&gt;</Authors>
         <Version>4.0.0</Version>
         <Nullable>enable</Nullable>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/ExM/NMoney</PackageProjectUrl>
+        <PackageIcon>Finance-Currency-icon.png</PackageIcon>
+        <RepositoryUrl>https://github.com/ExM/NMoney</RepositoryUrl>
+        <Copyright>MIT Copyright © 2024 Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
+        <Description>Bson serialization and MongoDB query rendering for NMoney</Description>
+        <PackageTags>money currencies ISO4217 Bson Mongo MongoDB</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MongoDB.Bson"/>
+    </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\NMoney\NMoney.csproj"/>
     </ItemGroup>
-    <Import Project="..\.paket\Paket.Restore.targets"/>
+
+    <ItemGroup>
+        <None Include="..\doc\Finance-Currency-icon.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+            <Link>Finance-Currency-icon.png</Link>
+        </None>
+
+        <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
 </Project>

@@ -11,7 +11,6 @@ dotnet run --project ./SourceCodeRenderer/SourceCodeRenderer.csproj -- -u -i=NMo
 
 Restore dependencies
 ```
-dotnet tool restore
 dotnet restore
 ```
 
@@ -27,5 +26,5 @@ dotnet test -c:Release
 
 Pack
 ```
-dotnet paket pack ./Release
+dotnet pack -c Release -o ./Release
 ```

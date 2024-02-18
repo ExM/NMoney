@@ -4,7 +4,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Attributes;
 using NUnit.Framework;
 
-namespace NMoney.Bson.Tests
+namespace NMoney.Bson
 {
 	[TestFixture, Parallelizable(ParallelScope.Children), TestOf(typeof(BsonMoneySerializer))]
 	public class BsonMoneySerializerTests : BsonTestsBase

@@ -3,15 +3,37 @@
     <PropertyGroup>
         <AssemblyTitle>NMoney</AssemblyTitle>
         <AssemblyName>NMoney</AssemblyName>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <FileVersion>4.1.0.0</FileVersion>
+        <FileVersion>4.0.0.0</FileVersion>
         <Company>ExM</Company>
         <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
         <Version>4.0.0</Version>
         <Nullable>enable</Nullable>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>portable</DebugType>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>Library for working with sums of money.
+            List of world currencies in accordance with ISO 4217
+        </Description>
+        <PackageTags>money currencies ISO4217</PackageTags>
+        <PackageProjectUrl>https://github.com/ExM/NMoney</PackageProjectUrl>
+        <PackageIcon>Finance-Currency-icon.png</PackageIcon>
+        <RepositoryUrl>https://github.com/ExM/NMoney</RepositoryUrl>
+        <Copyright>MIT Copyright © 2024 Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="..\doc\Finance-Currency-icon.png">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+            <Link>Finance-Currency-icon.png</Link>
+        </None>
 
-    <Import Project="..\.paket\Paket.Restore.targets"/>
+        <None Include="..\README.md" Pack="true" PackagePath="\">
+            <Link>README.md</Link>
+        </None>
+    </ItemGroup>
 </Project>

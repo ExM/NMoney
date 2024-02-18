@@ -16,7 +16,7 @@ Customizable currency collection
 
 Usage
 -----
-**Initalizing money**
+**Initializing money**
 
 ```C#
 var eur15 = new Money(15m, Iso4217.CurrencySet.EUR);
@@ -60,3 +60,6 @@ Iso4217.CurrencySet.USD.Money(20.953m).FloorMajorUnit()   // 20 USD
 Iso4217.CurrencySet.USD.Money(20.953m).CeilingMinorUnit() // 20.96 USD
 Iso4217.CurrencySet.USD.Money(20.953m).FloorMinorUnit()   // 20.95 USD
 ```
+
+# Serializing
+* [BSON](NMoney.Bson/README.md)
