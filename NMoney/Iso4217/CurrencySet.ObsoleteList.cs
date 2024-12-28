@@ -34,6 +34,11 @@ namespace NMoney.Iso4217
 		/// </summary>
 		[Obsolete]
 		public static Currency VEF => VEFCache.Instance;
+		/// <summary>
+		/// Zimbabwe Dollar
+		/// </summary>
+		[Obsolete]
+		public static Currency ZWL => ZWLCache.Instance;
 
 		
 		private static class BYRCache
@@ -64,6 +69,11 @@ namespace NMoney.Iso4217
 		private static class VEFCache
 		{
 			internal static readonly Currency Instance = new ObsoleteCurrency("VEF", "Bs", 937, 0.01m);
+		}
+
+		private static class ZWLCache
+		{
+			internal static readonly Currency Instance = new ObsoleteCurrency("ZWL", "¤", 932, 0.01m);
 		}
 	}
 }

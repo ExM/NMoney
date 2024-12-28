@@ -43,5 +43,12 @@
 			<CcyNbr>191</CcyNbr>
 			<CcyMnrUnts>2</CcyMnrUnts>
 		</CcyNtry>
+		<CcyNtry>
+			<CtryNm>ZIMBABWE</CtryNm>
+			<CcyNm>Zimbabwe Dollar</CcyNm>
+			<Ccy>ZWL</Ccy>
+			<CcyNbr>932</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
 	</CcyTbl>
 </ISO_4217>

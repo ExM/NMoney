@@ -135,4 +135,7 @@
   <data name="SLL" xml:space="preserve">
     <value>Леоне</value>
   </data>
+  <data name="ZWL" xml:space="preserve">
+    <value>Доллар Зимбабве</value>
+  </data>
 </root>

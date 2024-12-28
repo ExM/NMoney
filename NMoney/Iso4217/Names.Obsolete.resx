@@ -76,4 +76,7 @@
   <data name="VEF" xml:space="preserve">
     <value>Bolívar</value>
   </data>
+  <data name="ZWL" xml:space="preserve">
+    <value>Zimbabwe Dollar</value>
+  </data>
 </root>

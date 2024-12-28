@@ -645,13 +645,13 @@
   <data name="ZMW" xml:space="preserve">
     <value>Замбийская квача</value>
   </data>
-  <data name="ZWL" xml:space="preserve">
-    <value>Доллар Зимбабве</value>
-  </data>
   <data name="SLE" xml:space="preserve">
     <value>Леоне</value>
   </data>
   <data name="VED" xml:space="preserve">
     <value>Боливар Соберано</value>
+  </data>
+  <data name="ZWG" xml:space="preserve">
+    <value>Зимбабвийский золотой</value>
   </data>
 </root>

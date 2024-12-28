@@ -716,9 +716,9 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency ZMW => ZMWCache.Instance;
 		/// <summary>
-		/// Zimbabwe Dollar
+		/// Zimbabwe Gold
 		/// </summary>
-		public static Currency ZWL => ZWLCache.Instance;
+		public static Currency ZWG => ZWGCache.Instance;
 
 		internal static Currency[] GetAll()
 		{
@@ -901,7 +901,7 @@ namespace NMoney.Iso4217
 				YER,
 				ZAR,
 				ZMW,
-				ZWL,
+				ZWG,
 			};
 		}
 
@@ -1796,9 +1796,9 @@ namespace NMoney.Iso4217
 			internal static readonly Currency Instance = new Currency("ZMW", "ZK", 967, 0.01m);
 		}
 
-		private static class ZWLCache
+		private static class ZWGCache
 		{
-			internal static readonly Currency Instance = new Currency("ZWL", "¤", 932, 0.01m);
+			internal static readonly Currency Instance = new Currency("ZWG", "ZiG", 924, 0.01m);
 		}
 	}
 }
