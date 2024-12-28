@@ -5,11 +5,11 @@
         <AssemblyName>NMoney</AssemblyName>
         <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <AssemblyVersion>4.0.0.0</AssemblyVersion>
-        <FileVersion>4.0.0.0</FileVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <FileVersion>4.1.0.0</FileVersion>
         <Company>ExM</Company>
         <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
-        <Version>4.0.0</Version>
+        <Version>4.1.0</Version>
         <Nullable>enable</Nullable>
         <DebugSymbols>true</DebugSymbols>
         <DebugType>portable</DebugType>
