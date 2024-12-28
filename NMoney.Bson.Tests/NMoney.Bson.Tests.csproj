@@ -11,7 +11,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="MongoDB.Bson" />
     <PackageReference Include="MongoDB.Driver" />
-    <PackageReference Include="MongoDB.Driver.Core" />
   </ItemGroup>
 
   <ItemGroup>

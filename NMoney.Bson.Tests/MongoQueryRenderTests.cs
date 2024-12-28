@@ -66,7 +66,7 @@ namespace NMoney.Bson
 		public void RenderGreaterThanAmount()
 		{
 			var filter = Builders<Money>.Filter.Where(m => m.Amount > 100);
-			var expected = "{ 'sum' : { '$gt' : NumberDecimal('100') } }";
+			var expected = "{ 'sum' : { '$gt' : { '$numberDecimal' : '100' } } }";
 			var rendered = Render(filter);
 			Assert.That(rendered, Is.EqualTo(expected));
 		}
@@ -78,7 +78,7 @@ namespace NMoney.Bson
 				.Ascending(m => m.Currency)
 				.Ascending(m => m.Amount);
 			var expected = "{ 'cur' : 1, 'sum' : 1 }";
-			var rendered = index.Render(_serializer, _registry).ToJson().Replace('"', '\'');
+			var rendered = Render(index);
 			Assert.That(rendered, Is.EqualTo(expected));
 		}
 
@@ -88,7 +88,7 @@ namespace NMoney.Bson
 			var update = Builders<Money>.Update
 				.Set(m => m.Currency, Iso4217.CurrencySet.USD);
 			var expected = "{ '$set' : { 'cur' : 'USD' } }";
-			var rendered = update.Render(_serializer, _registry).ToJson().Replace('"', '\'');
+			var rendered = Render(update);
 			Assert.That(rendered, Is.EqualTo(expected));
 		}
 
@@ -97,16 +97,28 @@ namespace NMoney.Bson
 		{
 			var update = Builders<Money>.Update
 				.Inc(m => m.Amount, 100m);
-			var expected = "{ '$inc' : { 'sum' : NumberDecimal('100') } }";
-			var rendered = update.Render(_serializer, _registry).ToJson().Replace('"', '\'');
+			var expected = "{ '$inc' : { 'sum' : { '$numberDecimal' : '100' } } }";
+			var rendered = Render(update);
 			Assert.That(rendered, Is.EqualTo(expected));
 		}
 
 		private string Render(FilterDefinition<Money> filter) =>
 			filter
-			.Render(_serializer, _registry)
+			.Render(new RenderArgs<Money>(){DocumentSerializer = _serializer, SerializerRegistry = _registry})
 			.ToJson()
 			.Replace('"', '\'');
+		
+		private string Render(UpdateDefinition<Money> update) =>
+			update
+				.Render(new RenderArgs<Money>(){DocumentSerializer = _serializer, SerializerRegistry = _registry})
+				.ToJson()
+				.Replace('"', '\'');
+		
+		private string Render(IndexKeysDefinition<Money> ixKey) =>
+			ixKey
+				.Render(new RenderArgs<Money>(){DocumentSerializer = _serializer, SerializerRegistry = _registry})
+				.ToJson()
+				.Replace('"', '\'');
 
 	}
 }
