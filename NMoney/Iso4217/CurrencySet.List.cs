@@ -20,10 +20,6 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency AMD => AMDCache.Instance;
 		/// <summary>
-		/// Netherlands Antillean Guilder
-		/// </summary>
-		public static Currency ANG => ANGCache.Instance;
-		/// <summary>
 		/// Kwanza
 		/// </summary>
 		public static Currency AOA => AOACache.Instance;
@@ -151,10 +147,6 @@ namespace NMoney.Iso4217
 		/// Costa Rican Colon
 		/// </summary>
 		public static Currency CRC => CRCCache.Instance;
-		/// <summary>
-		/// Peso Convertible
-		/// </summary>
-		public static Currency CUC => CUCCache.Instance;
 		/// <summary>
 		/// Cuban Peso
 		/// </summary>
@@ -636,6 +628,10 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency WST => WSTCache.Instance;
 		/// <summary>
+		/// Arab Accounting Dinar
+		/// </summary>
+		public static Currency XAD => XADCache.Instance;
+		/// <summary>
 		/// CFA Franc BEAC
 		/// </summary>
 		public static Currency XAF => XAFCache.Instance;
@@ -667,6 +663,10 @@ namespace NMoney.Iso4217
 		/// East Caribbean Dollar
 		/// </summary>
 		public static Currency XCD => XCDCache.Instance;
+		/// <summary>
+		/// Caribbean Guilder
+		/// </summary>
+		public static Currency XCG => XCGCache.Instance;
 		/// <summary>
 		/// SDR (Special Drawing Right)
 		/// </summary>
@@ -727,7 +727,6 @@ namespace NMoney.Iso4217
 				AFN,
 				ALL,
 				AMD,
-				ANG,
 				AOA,
 				ARS,
 				AUD,
@@ -760,7 +759,6 @@ namespace NMoney.Iso4217
 				COP,
 				COU,
 				CRC,
-				CUC,
 				CUP,
 				CVE,
 				CZK,
@@ -881,6 +879,7 @@ namespace NMoney.Iso4217
 				VND,
 				VUV,
 				WST,
+				XAD,
 				XAF,
 				XAG,
 				XAU,
@@ -889,6 +888,7 @@ namespace NMoney.Iso4217
 				XBC,
 				XBD,
 				XCD,
+				XCG,
 				XDR,
 				XOF,
 				XPD,
@@ -924,11 +924,6 @@ namespace NMoney.Iso4217
 		private static class AMDCache
 		{
 			internal static readonly Currency Instance = new Currency("AMD", "¤", 51, 0.01m);
-		}
-
-		private static class ANGCache
-		{
-			internal static readonly Currency Instance = new Currency("ANG", "ƒ", 532, 0.01m);
 		}
 
 		private static class AOACache
@@ -1089,11 +1084,6 @@ namespace NMoney.Iso4217
 		private static class CRCCache
 		{
 			internal static readonly Currency Instance = new Currency("CRC", "₡", 188, 0.01m);
-		}
-
-		private static class CUCCache
-		{
-			internal static readonly Currency Instance = new Currency("CUC", "$", 931, 0.01m);
 		}
 
 		private static class CUPCache
@@ -1696,6 +1686,11 @@ namespace NMoney.Iso4217
 			internal static readonly Currency Instance = new Currency("WST", "T", 882, 0.01m);
 		}
 
+		private static class XADCache
+		{
+			internal static readonly Currency Instance = new Currency("XAD", "¤", 396, 0.01m);
+		}
+
 		private static class XAFCache
 		{
 			internal static readonly Currency Instance = new Currency("XAF", "Fr", 950, 1m);
@@ -1734,6 +1729,11 @@ namespace NMoney.Iso4217
 		private static class XCDCache
 		{
 			internal static readonly Currency Instance = new Currency("XCD", "$", 951, 0.01m);
+		}
+
+		private static class XCGCache
+		{
+			internal static readonly Currency Instance = new Currency("XCG", "¤", 532, 0.01m);
 		}
 
 		private static class XDRCache

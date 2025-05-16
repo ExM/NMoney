@@ -5,10 +5,20 @@ namespace NMoney.Iso4217
 	public partial class CurrencySet
 	{
 		/// <summary>
+		/// Netherlands Antillean Guilder
+		/// </summary>
+		[Obsolete]
+		public static Currency ANG => ANGCache.Instance;
+		/// <summary>
 		/// Belarusian Ruble
 		/// </summary>
 		[Obsolete]
 		public static Currency BYR => BYRCache.Instance;
+		/// <summary>
+		/// Peso Convertible
+		/// </summary>
+		[Obsolete]
+		public static Currency CUC => CUCCache.Instance;
 		/// <summary>
 		/// Kuna
 		/// </summary>
@@ -41,9 +51,19 @@ namespace NMoney.Iso4217
 		public static Currency ZWL => ZWLCache.Instance;
 
 		
+		private static class ANGCache
+		{
+			internal static readonly Currency Instance = new ObsoleteCurrency("ANG", "ƒ", 532, 0.01m);
+		}
+
 		private static class BYRCache
 		{
 			internal static readonly Currency Instance = new ObsoleteCurrency("BYR", "¤", 974, 1m);
+		}
+
+		private static class CUCCache
+		{
+			internal static readonly Currency Instance = new ObsoleteCurrency("CUC", "$", 931, 0.01m);
 		}
 
 		private static class HRKCache

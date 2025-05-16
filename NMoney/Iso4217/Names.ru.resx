@@ -129,9 +129,6 @@
   <data name="AMD" xml:space="preserve">
     <value>Армянский драм</value>
   </data>
-  <data name="ANG" xml:space="preserve">
-    <value>Нидерландский антильский гульден</value>
-  </data>
   <data name="AOA" xml:space="preserve">
     <value>Кванза</value>
   </data>
@@ -227,9 +224,6 @@
   </data>
   <data name="CRC" xml:space="preserve">
     <value>Костариканский колон</value>
-  </data>
-  <data name="CUC" xml:space="preserve">
-    <value>Кубинское конвертируемое песо</value>
   </data>
   <data name="CUP" xml:space="preserve">
     <value>Кубинское песо</value>
@@ -653,5 +647,11 @@
   </data>
   <data name="ZWG" xml:space="preserve">
     <value>Зимбабвийский золотой</value>
+  </data>
+  <data name="XAD" xml:space="preserve">
+    <value>Арабский расчётный динар</value>
+  </data>
+  <data name="XCG" xml:space="preserve">
+    <value>Карибский гульден</value>
   </data>
 </root>

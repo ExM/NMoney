@@ -58,8 +58,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ANG" xml:space="preserve">
+    <value>Netherlands Antillean Guilder</value>
+  </data>
   <data name="BYR" xml:space="preserve">
     <value>Belarusian Ruble</value>
+  </data>
+  <data name="CUC" xml:space="preserve">
+    <value>Peso Convertible</value>
   </data>
   <data name="HRK" xml:space="preserve">
     <value>Kuna</value>

@@ -138,4 +138,10 @@
   <data name="ZWL" xml:space="preserve">
     <value>Доллар Зимбабве</value>
   </data>
+  <data name="ANG" xml:space="preserve">
+    <value>Нидерландский антильский гульден</value>
+  </data>
+  <data name="CUC" xml:space="preserve">
+    <value>Кубинское конвертируемое песо</value>
+  </data>
 </root>

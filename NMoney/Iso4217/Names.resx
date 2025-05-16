@@ -70,9 +70,6 @@
   <data name="AMD" xml:space="preserve">
     <value>Armenian Dram</value>
   </data>
-  <data name="ANG" xml:space="preserve">
-    <value>Netherlands Antillean Guilder</value>
-  </data>
   <data name="AOA" xml:space="preserve">
     <value>Kwanza</value>
   </data>
@@ -168,9 +165,6 @@
   </data>
   <data name="CRC" xml:space="preserve">
     <value>Costa Rican Colon</value>
-  </data>
-  <data name="CUC" xml:space="preserve">
-    <value>Peso Convertible</value>
   </data>
   <data name="CUP" xml:space="preserve">
     <value>Cuban Peso</value>
@@ -532,6 +526,9 @@
   <data name="WST" xml:space="preserve">
     <value>Tala</value>
   </data>
+  <data name="XAD" xml:space="preserve">
+    <value>Arab Accounting Dinar</value>
+  </data>
   <data name="XAF" xml:space="preserve">
     <value>CFA Franc BEAC</value>
   </data>
@@ -555,6 +552,9 @@
   </data>
   <data name="XCD" xml:space="preserve">
     <value>East Caribbean Dollar</value>
+  </data>
+  <data name="XCG" xml:space="preserve">
+    <value>Caribbean Guilder</value>
   </data>
   <data name="XDR" xml:space="preserve">
     <value>Special Drawing Right</value>
