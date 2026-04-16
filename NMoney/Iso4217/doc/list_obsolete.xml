@@ -71,5 +71,12 @@
 			<CcyNbr>532</CcyNbr>
 			<CcyMnrUnts>2</CcyMnrUnts>
 		</CcyNtry>
+		<CcyNtry>
+			<CtryNm>BULGARIA</CtryNm>
+			<CcyNm>Bulgarian Lev</CcyNm>
+			<Ccy>BGN</Ccy>
+			<CcyNbr>975</CcyNbr>
+			<CcyMnrUnts>2</CcyMnrUnts>
+		</CcyNtry>
 	</CcyTbl>
 </ISO_4217>

@@ -10,6 +10,11 @@ namespace NMoney.Iso4217
 		[Obsolete]
 		public static Currency ANG => ANGCache.Instance;
 		/// <summary>
+		/// Bulgarian Lev
+		/// </summary>
+		[Obsolete]
+		public static Currency BGN => BGNCache.Instance;
+		/// <summary>
 		/// Belarusian Ruble
 		/// </summary>
 		[Obsolete]
@@ -54,6 +59,11 @@ namespace NMoney.Iso4217
 		private static class ANGCache
 		{
 			internal static readonly Currency Instance = new ObsoleteCurrency("ANG", "ƒ", 532, 0.01m);
+		}
+
+		private static class BGNCache
+		{
+			internal static readonly Currency Instance = new ObsoleteCurrency("BGN", "лв", 975, 0.01m);
 		}
 
 		private static class BYRCache

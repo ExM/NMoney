@@ -52,10 +52,6 @@ namespace NMoney.Iso4217
 		/// </summary>
 		public static Currency BDT => BDTCache.Instance;
 		/// <summary>
-		/// Bulgarian Lev
-		/// </summary>
-		public static Currency BGN => BGNCache.Instance;
-		/// <summary>
 		/// Bahraini Dinar
 		/// </summary>
 		public static Currency BHD => BHDCache.Instance;
@@ -735,7 +731,6 @@ namespace NMoney.Iso4217
 				BAM,
 				BBD,
 				BDT,
-				BGN,
 				BHD,
 				BIF,
 				BMD,
@@ -964,11 +959,6 @@ namespace NMoney.Iso4217
 		private static class BDTCache
 		{
 			internal static readonly Currency Instance = new Currency("BDT", "৳", 50, 0.01m);
-		}
-
-		private static class BGNCache
-		{
-			internal static readonly Currency Instance = new Currency("BGN", "лв", 975, 0.01m);
 		}
 
 		private static class BHDCache

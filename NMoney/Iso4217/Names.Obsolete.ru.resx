@@ -144,4 +144,7 @@
   <data name="CUC" xml:space="preserve">
     <value>Кубинское конвертируемое песо</value>
   </data>
+  <data name="BGN" xml:space="preserve">
+    <value>Лев</value>
+  </data>
 </root>

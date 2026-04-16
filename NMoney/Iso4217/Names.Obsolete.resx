@@ -61,6 +61,9 @@
   <data name="ANG" xml:space="preserve">
     <value>Netherlands Antillean Guilder</value>
   </data>
+  <data name="BGN" xml:space="preserve">
+    <value>Bulgarian Lev</value>
+  </data>
   <data name="BYR" xml:space="preserve">
     <value>Belarusian Ruble</value>
   </data>
