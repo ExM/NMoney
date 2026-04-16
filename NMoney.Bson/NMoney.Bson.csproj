@@ -5,11 +5,11 @@
         <AssemblyName>NMoney.Bson</AssemblyName>
         <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <AssemblyVersion>4.1.0.0</AssemblyVersion>
-        <FileVersion>4.1.0.0</FileVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+        <FileVersion>4.3.0.0</FileVersion>
         <Company>ExM</Company>
         <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;, Pavel Laptov&lt;pavel.laptov@ya.ru&gt;</Authors>
-        <Version>4.1.0</Version>
+        <Version>4.3.0</Version>
         <Nullable>enable</Nullable>
         <DebugSymbols>true</DebugSymbols>
         <DebugType>portable</DebugType>
@@ -18,7 +18,7 @@
         <PackageProjectUrl>https://github.com/ExM/NMoney</PackageProjectUrl>
         <PackageIcon>Finance-Currency-icon.png</PackageIcon>
         <RepositoryUrl>https://github.com/ExM/NMoney</RepositoryUrl>
-        <Copyright>MIT Copyright © 2024 Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
+        <Copyright>MIT Copyright © 2026 Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
         <Description>Bson serialization and MongoDB query rendering for NMoney</Description>
         <PackageTags>money currencies ISO4217 Bson Mongo MongoDB</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>

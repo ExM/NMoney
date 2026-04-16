@@ -5,11 +5,11 @@
         <AssemblyName>NMoney</AssemblyName>
         <TargetFrameworks>net8.0;net10.0</TargetFrameworks>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <AssemblyVersion>4.2.0.0</AssemblyVersion>
-        <FileVersion>4.2.0.0</FileVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+        <FileVersion>4.3.0.0</FileVersion>
         <Company>ExM</Company>
         <Authors>Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Authors>
-        <Version>4.2.0</Version>
+        <Version>4.3.0</Version>
         <Nullable>enable</Nullable>
         <DebugSymbols>true</DebugSymbols>
         <DebugType>portable</DebugType>
@@ -22,7 +22,7 @@
         <PackageProjectUrl>https://github.com/ExM/NMoney</PackageProjectUrl>
         <PackageIcon>Finance-Currency-icon.png</PackageIcon>
         <RepositoryUrl>https://github.com/ExM/NMoney</RepositoryUrl>
-        <Copyright>MIT Copyright © 2024 Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
+        <Copyright>MIT Copyright © 2026 Anatoliy Koperin &lt;a.koperin@gmail.com&gt;</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
     <ItemGroup>
