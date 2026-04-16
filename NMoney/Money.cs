@@ -3,7 +3,7 @@ using System;
 namespace NMoney
 {
 	/// <summary>
-	/// This structure provides a amount of money in some currency
+	/// This structure provides an amount of money in some currency
 	/// </summary>
 	public readonly struct Money : IComparable<Money>, IEquatable<Money>
 	{

@@ -37,6 +37,23 @@ namespace NMoney
 		{
 			return currencySet.TryParse(charCode) != null;
 		}
+		
+		/// <summary>
+		/// Return currency from character code
+		/// </summary>
+		/// <param name="currencySet">this currency set</param>
+		/// <param name="charCode">
+		/// character code
+		/// </param>
+		/// <exception cref="System.NotSupportedException">if currrency set is not contain this currency</exception>
+		public static ICurrency Parse(this ICurrencySet currencySet, string charCode)
+		{
+			var currency = currencySet.TryParse(charCode);
+			if (currency != null)
+				return currency;
+
+			throw new NotSupportedException("currency code '" + charCode + "' not supported");
+		}
 
 		/// <summary>
 		/// Return currency from character code

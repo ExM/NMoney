@@ -13,7 +13,7 @@ namespace NMoney
 		[Test]
 		public void Create()
 		{
-			ICurrencySet set = new CurrencySet(new[] { _xa, _xb, _xc });
+			ICurrencySet set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.That(set.AllCurrencies.Count, Is.EqualTo(3));
 
@@ -27,7 +27,7 @@ namespace NMoney
 		{
 			var xc = new Currency("XB", 0.01m, "c");
 
-			Assert.Throws<ArgumentException>(() => new CurrencySet(new[] { _xa, _xb, xc }));
+			Assert.Throws<ArgumentException>(() => new CurrencySet([_xa, _xb, xc]));
 		}
 
 		[Test]
@@ -44,7 +44,7 @@ namespace NMoney
 		[Test]
 		public void NotContainCurrency()
 		{
-			var set = new CurrencySet(new[] { _xa, _xb, _xc });
+			var set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.That(set.Contain(new FakeCurrency()), Is.False);
 		}
@@ -82,7 +82,7 @@ namespace NMoney
 		[Test]
 		public void TryParseNumCodeFail()
 		{
-			var set = new CurrencySet(new[] { _xa, _xb, _xc });
+			var set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.That(set.TryParse("???", out _), Is.False);
 		}
@@ -90,7 +90,7 @@ namespace NMoney
 		[Test]
 		public void NotContainCode()
 		{
-			var set = new CurrencySet(new[] { _xa, _xb, _xc });
+			var set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.That(set.Contain("???"), Is.False);
 		}
@@ -98,23 +98,42 @@ namespace NMoney
 		[Test]
 		public void Contains()
 		{
-			var set = new CurrencySet(new[] { _xa, _xb, _xc });
+			var set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.That(set.Contain(_xa.CharCode), Is.True);
 		}
 
 		[Test]
-		public void ParseCharCode()
+		public void TypedParseCharCode()
 		{
-			var set = new CurrencySet(new[] { _xa, _xb, _xc });
+			var set = new CurrencySet([_xa, _xb, _xc]);
+
+			Assert.That(set.Parse("XA").CharCode, Is.EqualTo("XA"));
+		}
+		
+		[Test]
+		public void UntypedParseCharCode()
+		{
+			ICurrencySet set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.That(set.Parse("XA").CharCode, Is.EqualTo("XA"));
 		}
 
 		[Test]
-		public void ParseCharFalse()
+		public void TypedParseCharFalse()
 		{
-			var set = new CurrencySet(new[] { _xa, _xb, _xc });
+			var set = new CurrencySet([_xa, _xb, _xc]);
+
+			Assert.Throws<NotSupportedException>(() =>
+			{
+				set.Parse("???");
+			});
+		}
+		
+		[Test]
+		public void UntypedParseCharFalse()
+		{
+			ICurrencySet set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.Throws<NotSupportedException>(() =>
 			{
@@ -125,7 +144,7 @@ namespace NMoney
 		[Test]
 		public void TryParseCharCode()
 		{
-			var set = new CurrencySet(new[] { _xa, _xb, _xc });
+			var set = new CurrencySet([_xa, _xb, _xc]);
 
 			Assert.That(set.TryParse("XA", out var c), Is.True);
 			Assert.That(c!.CharCode, Is.EqualTo("XA"));

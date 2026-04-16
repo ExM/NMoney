@@ -15,11 +15,11 @@ namespace NMoney.Iso4217
 
 		internal static Currency[] GetAll()
 		{
-			return new Currency[] {
+			return [
 <# foreach(var code in ActualCurrencies.Select(e => e.Code)) {
 #>				<#= code #>,
 <# }
-#>			};
+#>			];
 		}
 
 		<#		foreach(var entry in ActualCurrencies) {

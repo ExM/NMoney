@@ -10,14 +10,13 @@ namespace NMoney.Bson
 	public abstract class BsonTestsBase
 	{
 		private static readonly ICurrencySet _currencySet =
-			new CurrencySet(new[]
-			{
+			new CurrencySet([
 				new Currency("USD", 0.01m, "$"),
 				new Currency("EUR", 0.01m, "€"),
 				new Currency("RUB", 0.01m, "₽"),
 				// Custom
-				new Currency("BTC", 0.01m, "₿"),
-			});
+				new Currency("BTC", 0.01m, "₿")
+			]);
 
 		public static IEnumerable<ICurrency> AllCurrencies => _currencySet.AllCurrencies;
 
@@ -32,8 +31,8 @@ namespace NMoney.Bson
 		protected BsonDocument Serialize<T>(T obj)
 		{
 			var bsonDoc = new BsonDocument();
-			using (var writer = new BsonDocumentWriter(bsonDoc))
-				BsonSerializer.Serialize(writer, obj);
+			using var writer = new BsonDocumentWriter(bsonDoc);
+			BsonSerializer.Serialize(writer, obj);
 			return bsonDoc;
 		}
 

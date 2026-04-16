@@ -68,7 +68,7 @@ namespace NMoney.SourceCodeRenderer
 			if (inst is RenderContext context)
 				configureContext(context);
 
-			var result = (string) mi.Invoke(inst, new object?[0])!;
+			var result = (string) mi.Invoke(inst, [])!;
 
 			return result;
 		}

@@ -120,9 +120,9 @@ namespace NMoney.SourceCodeRenderer
 				if (iConvertibleType.IsAssignableFrom(type))
 					return ((IConvertible) objectToConvert).ToString(_formatProvider);
 
-				var methInfo = type.GetMethod("ToString", new [] { iConvertibleType});
+				var methInfo = type.GetMethod("ToString", [iConvertibleType]);
 				if (methInfo != null)
-					return (string?) methInfo.Invoke(objectToConvert, new object[] { _formatProvider });
+					return (string?) methInfo.Invoke(objectToConvert, [_formatProvider]);
 
 				return objectToConvert.ToString();
 			}

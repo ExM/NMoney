@@ -718,7 +718,7 @@ namespace NMoney.Iso4217
 
 		internal static Currency[] GetAll()
 		{
-			return new Currency[] {
+			return [
 				AED,
 				AFN,
 				ALL,
@@ -897,7 +897,7 @@ namespace NMoney.Iso4217
 				ZAR,
 				ZMW,
 				ZWG,
-			};
+			];
 		}
 
 		
